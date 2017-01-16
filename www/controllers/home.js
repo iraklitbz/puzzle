@@ -17,7 +17,7 @@ function homeCtrl ($rootScope, $scope) {
 
         gridster = $(".gridster ul").gridster({
             widget_base_dimensions: [58.5, 58.5],
-            widget_margins: [0, 0],
+            widget_margins: [1, 1],
             helper: 'clone',
             resize: {
                 enabled: false,

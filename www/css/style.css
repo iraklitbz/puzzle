@@ -91,6 +91,10 @@ body {
 
 /*FIGURAS*/
 
+
+
+
+
 .figuraone .figura {
     background-color: #886aea;
     width: 58.5px;
@@ -121,6 +125,11 @@ body {
     top: 58.5px;
 }
 
+
+.gridster ul {
+    list-style: none;
+    background-color: gray;
+}
 
 
 
