@@ -12,8 +12,18 @@ function homeCtrl ($rootScope, $scope) {
         $('.front, .back').toggleClass('inback');
     };
 
-    $('#grid').packery({
-        itemSelector: '.grid-item'
-    });
+    if (jQuery().packery) {
+    	var $grid = $('#grid');
+
+    	$grid.packery({
+        	itemSelector: '.grid-item'
+    	});
+
+    	$grid.find('.grid-item').each(function (i, gridItem) {
+    		var draggie = new Draggabilly(gridItem);
+
+    		$grid.packery('bindDraggabillyEvents', draggie);
+    	});
+	}
 }
 
