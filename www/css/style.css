@@ -16,67 +16,39 @@ body {
     -webkit-transform-style: preserve-3d;
     -webkit-transition: all 0.8s ease-out;
     position: relative;
-    width: 240px;
-    height: 240px;
+    width: 280px;
+    height: 280px;
     top: 50%;
     left: 50%;
-    margin-left: -120px;
-    margin-top: -120px;
+    margin-left: -140px;
+    margin-top: -140px;
 
 
 }
 
 .face {
-    width: 240px;
-    height: 240px;
+    width: 280px;
+    height: 280px;
     display: block;
     position: absolute;
 }
 .front {
-    -webkit-transform: translateZ(120px);
-    background-color: #f34235;
+    -webkit-transform: translateZ(1px);
+    background-color: transparent;
     border: 10px solid #2b2b2b;
 
 }
-.left {
-    -webkit-transform: rotateY(-90deg);
-    margin-left: -120px;
-    background-color: #363f45;
 
-}
-
-.right {
-    background-color: #363f45;
-    -webkit-transform: rotateY(90deg);
-    margin-left: 120px;
-
-}
 
 .back {
-    background-color: #00bbd3;
-    -webkit-transform: translateZ(-120px) rotateX(0deg);
-    border: 10px solid #363f45;
+    background-color: transparent;
+    -webkit-transform: translateZ(-1px);
+    border: 10px solid #2b2b2b;
 
-}
-
-.bottom {
-    background-color: #fff;
-    -webkit-transform: rotateX(-90deg);
-    margin-top: 120px;
-
-}
-
-.top {
-    background-color: #fff;
-    -webkit-transform: rotateX(90deg);
-    margin-top: -120px;
 
 }
 
 
-.inback {
-   -webkit-transform: translateZ(119px)!important;
-}
 
 .rejilla {
     display: flex;
@@ -89,7 +61,7 @@ body {
 .columna {
    width: 25%;
     height: 25%;
-    border: 2px solid #f3f3f3;
+    background-color: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -120,6 +92,149 @@ body {
 }
 .bar.bar-balanced.bar-footer,.bar-header {
     background-color: #363f45;
+}
+
+.swipArea {
+    width: 100%;
+    height: 30%;
+    position: absolute;
+    bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.swipArea h2 {
+   color: #e4e3e3;
+}
+
+
+
+/*FIGURAS*/
+
+.figura {
+    width: 65.09px;
+    height: 65.09px;
+    position: absolute;
+}
+
+.figura  {
+    background-color: #c62828;
+}
+
+
+.figuraone {
+    width: 130.18px;
+    height: 130.18px;
+    clear: both;
+    position: absolute;
+}
+.figuraone .minibox {
+ background-color: #e53935;
+}
+
+
+.figuratwo {
+    width: 130.18px;
+    height: 195.27px;
+    clear: both;
+    position: absolute;
+}
+
+.figuratwo .minibox {
+    background-color: #d32f2f;
+}
+
+.figuratwo .minibox {
+    position: relative;
+    left: 65.09px;
+}
+
+.figuratwo .minibox:last-child {
+   top: -65.09px ;
+    left: 0px;
+}
+
+
+.figurathree {
+     width: 195.27px;
+     height: 130.18px;
+     clear: both;
+     position: absolute;
+ }
+
+.figurathree .minibox {
+    float: right;
+    background-color: #00897b;
+}
+
+
+.figurathree .minibox:last-child {
+    position: relative;
+    right: 65.09px;
+}
+
+.figurafour {
+    width: 130.18px;;
+    height: 130.18px;
+    clear: both;
+    position: absolute;
+}
+
+.figurafour .minibox {
+    float: right;
+    background-color: #00796b;
+}
+
+.figurafour .minibox:last-child {
+    right: 65.09px;
+    position: relative;
+}
+
+.back .figura .minibox  {
+    background-color: #00695c;
+}
+
+
+.minibox {
+    width: 65.09px;
+    height: 65.09px;
+    background-color: #f34235;
+    transition: background-color 0.3s linear;
+}
+
+.inback .minibox {
+    background-color: #2b2b2b!important;
+}
+
+/*FIGURAS POSITIONS*/
+
+/*FIRST*/
+.figuraone .minibox  {
+    float: left;
+}
+.first .front .figura {
+    left: 65.09px;
+    top: 65.09px;
+}
+
+.first .front .figuratwo {
+    left: 65.09px;
+    top: 0px;
+}
+
+.first .back .figurathree {
+    left: 65.09px;
+    top: 65.09px;
+}
+
+.first .back .figura {
+    right: 0px;
+    top: 130.18px;
+}
+
+.first .back .figurafour  {
+    top: 130.18px;
 }
 
 
