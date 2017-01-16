@@ -12,16 +12,22 @@ function homeCtrl ($rootScope, $scope) {
         $('.front, .back').toggleClass('inback');
     };
 
-    gridster = $(".gridster ul").gridster({
-        widget_base_dimensions: [100, 55],
-        widget_margins: [3, 3],
-        helper: 'clone',
-        resize: {
-            enabled: false,
-            max_size: [2, 4],
-            min_size: [1, 1]
-        },
-        min_rows: 3
-    }).data('gridster');
+    if (jQuery().gridster) {
+    	var gridster;
+
+        gridster = $(".gridster ul").gridster({
+            widget_base_dimensions: [58.5, 58.5],
+            widget_margins: [3, 3],
+            helper: 'clone',
+            resize: {
+                enabled: false,
+                max_size: [2, 4],
+                min_size: [1, 1]
+            },
+            min_rows: 3
+        }).data('gridster');
+
+
+	}
 }
 

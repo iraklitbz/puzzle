@@ -91,10 +91,36 @@ body {
 
 /*FIGURAS*/
 
-.figuraone li {
+.figuraone li .figura {
     background-color: #0a9dc7;
-    width: 60.18px;
-    height: 60.18px;
+    width: 58.5px;
+    height: 58.5px;
+}
+
+.figuraone li .figura:last-child{
+    position: absolute;
+    left: 58.5px;
+    top: 117px;
+}
+
+.figuratwo {
+    position: absolute;
+    width: 117px;
+    height: 117px!important;
+    right:0px
+}
+
+.figuratwo li .figura {
+    background-color: #0a9dc7;
+    width: 58.5px;
+    height: 58.5px;
+    float: right;
+}
+
+.figuratwo li .figura:last-child{
+    position: absolute;
+    left: -58.5px;
+    top: 58.5px;
 }
 
 
