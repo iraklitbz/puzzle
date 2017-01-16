@@ -16,8 +16,8 @@ body {
     -webkit-transform-style: preserve-3d;
     -webkit-transition: all 0.8s ease-out;
     position: relative;
-    width: 280px;
-    height: 280px;
+    width: 280.4px;
+    height: 280.4px;
     top: 50%;
     left: 50%;
     margin-left: -140px;
@@ -27,8 +27,8 @@ body {
 }
 
 .face {
-    width: 280px;
-    height: 280px;
+    width: 280.4px;
+    height: 280.4px!important;
     display: block;
     position: absolute;
 }
@@ -47,27 +47,6 @@ body {
 
 
 }
-
-
-
-.rejilla {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
-    height: 100%;
-}
-
-.columna {
-   width: 25%;
-    height: 25%;
-    background-color: transparent;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
 
 
 
@@ -112,130 +91,12 @@ body {
 
 /*FIGURAS*/
 
-.figura {
-    width: 65.09px;
-    height: 65.09px;
-    position: absolute;
+.figuraone li {
+    background-color: #0a9dc7;
+    width: 65px;
+    height: 65px;
 }
 
-.figura  {
-    background-color: #c62828;
-}
-
-
-.figuraone {
-    width: 130.18px;
-    height: 130.18px;
-    clear: both;
-    position: absolute;
-}
-.figuraone .minibox {
- background-color: #e53935;
-}
-
-
-.figuratwo {
-    width: 130.18px;
-    height: 195.27px;
-    clear: both;
-    position: absolute;
-}
-
-.figuratwo .minibox {
-    background-color: #d32f2f;
-}
-
-.figuratwo .minibox {
-    position: relative;
-    left: 65.09px;
-}
-
-.figuratwo .minibox:last-child {
-   top: -65.09px ;
-    left: 0px;
-}
-
-
-.figurathree {
-     width: 195.27px;
-     height: 130.18px;
-     clear: both;
-     position: absolute;
- }
-
-.figurathree .minibox {
-    float: right;
-    background-color: #00897b;
-}
-
-
-.figurathree .minibox:last-child {
-    position: relative;
-    right: 65.09px;
-}
-
-.figurafour {
-    width: 130.18px;;
-    height: 130.18px;
-    clear: both;
-    position: absolute;
-}
-
-.figurafour .minibox {
-    float: right;
-    background-color: #00796b;
-}
-
-.figurafour .minibox:last-child {
-    right: 65.09px;
-    position: relative;
-}
-
-.back .figura .minibox  {
-    background-color: #00695c;
-}
-
-
-.minibox {
-    width: 65.09px;
-    height: 65.09px;
-    background-color: #f34235;
-    transition: background-color 0.3s linear;
-}
-
-.inback .minibox {
-    background-color: #2b2b2b!important;
-}
-
-/*FIGURAS POSITIONS*/
-
-/*FIRST*/
-.figuraone .minibox  {
-    float: left;
-}
-.first .front .figura {
-    left: 65.09px;
-    top: 65.09px;
-}
-
-.first .front .figuratwo {
-    left: 65.09px;
-    top: 0px;
-}
-
-.first .back .figurathree {
-    left: 65.09px;
-    top: 65.09px;
-}
-
-.first .back .figura {
-    right: 0px;
-    top: 130.18px;
-}
-
-.first .back .figurafour  {
-    top: 130.18px;
-}
 
 
 

@@ -12,18 +12,9 @@ function homeCtrl ($rootScope, $scope) {
         $('.front, .back').toggleClass('inback');
     };
 
-    if (jQuery().packery) {
-    	var $grid = $('#grid');
-
-    	$grid.packery({
-        	itemSelector: '.grid-item'
-    	});
-
-    	$grid.find('.grid-item').each(function (i, gridItem) {
-    		var draggie = new Draggabilly(gridItem);
-
-    		$grid.packery('bindDraggabillyEvents', draggie);
-    	});
-	}
+    $(".gridster ul").gridster({
+        widget_margins: [10, 10],
+        widget_base_dimensions: [280.4, 280.4]
+    });
 }
 
