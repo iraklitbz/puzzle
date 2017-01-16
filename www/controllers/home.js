@@ -12,9 +12,16 @@ function homeCtrl ($rootScope, $scope) {
         $('.front, .back').toggleClass('inback');
     };
 
-    $(".gridster ul").gridster({
-        widget_margins: [10, 10],
-        widget_base_dimensions: [280.4, 280.4]
-    });
+    gridster = $(".gridster ul").gridster({
+        widget_base_dimensions: [100, 55],
+        widget_margins: [3, 3],
+        helper: 'clone',
+        resize: {
+            enabled: false,
+            max_size: [2, 4],
+            min_size: [1, 1]
+        },
+        min_rows: 3
+    }).data('gridster');
 }
 

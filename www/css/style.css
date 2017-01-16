@@ -35,7 +35,7 @@ body {
 .front {
     -webkit-transform: translateZ(1px);
     background-color: transparent;
-    border: 10px solid #2b2b2b;
+    border: 20px solid #2b2b2b;
 
 }
 
@@ -43,7 +43,7 @@ body {
 .back {
     background-color: transparent;
     -webkit-transform: translateZ(-1px);
-    border: 10px solid #2b2b2b;
+    border: 20px solid #2b2b2b;
 
 
 }
@@ -93,8 +93,8 @@ body {
 
 .figuraone li {
     background-color: #0a9dc7;
-    width: 65px;
-    height: 65px;
+    width: 60.18px;
+    height: 60.18px;
 }
 
 
