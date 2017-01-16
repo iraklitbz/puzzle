@@ -10,5 +10,10 @@ function homeCtrl ($rootScope, $scope) {
         $("." + string).css("transform", "rotateY(" + $scope.rotation + "deg)")
 
         $('.front, .back').toggleClass('inback');
-    }
+    };
+
+    $('#grid').packery({
+        itemSelector: '.grid-item'
+    });
 }
+
