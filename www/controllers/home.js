@@ -17,14 +17,12 @@ function homeCtrl ($rootScope, $scope) {
 
         gridster = $(".gridster ul").gridster({
             widget_base_dimensions: [58.5, 58.5],
-            widget_margins: [3, 3],
+            widget_margins: [0, 0],
             helper: 'clone',
             resize: {
                 enabled: false,
-                max_size: [2, 4],
-                min_size: [1, 1]
             },
-            min_rows: 3
+            min_cols: 4,
         }).data('gridster');
 
 

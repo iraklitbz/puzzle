@@ -91,13 +91,13 @@ body {
 
 /*FIGURAS*/
 
-.figuraone li .figura {
-    background-color: #0a9dc7;
+.figuraone .figura {
+    background-color: #886aea;
     width: 58.5px;
     height: 58.5px;
 }
 
-.figuraone li .figura:last-child{
+.figuraone .figura:last-child{
     position: absolute;
     left: 58.5px;
     top: 117px;
@@ -105,19 +105,17 @@ body {
 
 .figuratwo {
     position: absolute;
-    width: 117px;
-    height: 117px!important;
     right:0px
 }
 
-.figuratwo li .figura {
+.figuratwo .figura {
     background-color: #0a9dc7;
     width: 58.5px;
     height: 58.5px;
     float: right;
 }
 
-.figuratwo li .figura:last-child{
+.figuratwo .figura:last-child{
     position: absolute;
     left: -58.5px;
     top: 58.5px;
