@@ -16,26 +16,26 @@ body {
     -webkit-transform-style: preserve-3d;
     -webkit-transition: all 0.8s ease-out;
     position: relative;
-    width: 280.4px;
-    height: 280.4px;
+    width: 280px;
+    height: 280px;
     top: 50%;
     left: 50%;
     margin-left: -140px;
     margin-top: -140px;
+    border: 20px solid #2b2b2b;
 
 
 }
 
 .face {
-    width: 280.4px;
-    height: 280.4px!important;
+    width: 240px;
+    height: 240px;
     display: block;
-    position: absolute;
+    position: relative;
 }
 .front {
     -webkit-transform: translateZ(1px);
     background-color: transparent;
-    border: 20px solid #2b2b2b;
 
 }
 
@@ -43,7 +43,6 @@ body {
 .back {
     background-color: transparent;
     -webkit-transform: translateZ(-1px);
-    border: 20px solid #2b2b2b;
 
 
 }
@@ -91,46 +90,58 @@ body {
 
 /*FIGURAS*/
 
-
-
-
-
-.figuraone .figura {
-    background-color: #886aea;
-    width: 58.5px;
-    height: 58.5px;
-}
-
-.figuraone .figura:last-child{
+#brick-1 {
     position: absolute;
-    left: 58.5px;
-    top: 117px;
+    top: 60px;
+width: 180px;
+ height: 120px;
+    clear: both;
 }
-
-.figuratwo {
+#brick-1 .square {
+  float: left;
+    background-color: #6b46e5;
+}
+#brick-1 .square:last-child {
     position: absolute;
-    right:0px
+    top: 60px;
+    left: 60px;
 }
 
-.figuratwo .figura {
+#brick-2 {
+    position: absolute;
+    top: 120px;
+    width: 60px;
+    height: 60px;
+}
+
+#brick-3  {
+    position: absolute;
+    left: 120px;
+    top: 120px;
+    width: 120px;
+    height: 120px
+}
+
+#brick-3 .square {
+    float: left;
+    background-color: #28a54c;
+}
+#brick-3 .square:last-child {
+    position: absolute;
+    top: 60px;
+    left: 60px;
+}
+
+
+.square {
+    width: 60px;
+    height: 60px;
     background-color: #0a9dc7;
-    width: 58.5px;
-    height: 58.5px;
-    float: right;
 }
 
-.figuratwo .figura:last-child{
-    position: absolute;
-    left: -58.5px;
-    top: 58.5px;
+.draggable {
+    transition: all 0.2s linear;
 }
-
-
-.gridster ul {
-    list-style: none;
-    background-color: gray;
-}
-
 
 
 
