@@ -120,7 +120,7 @@ body {
     background-color: #0a9dc7;
 }
 .draggable {
-    transition: all 0.2s linear;
+    transition: all 0.1s linear;
 }
 
 
