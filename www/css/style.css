@@ -13,7 +13,7 @@ body {
     -webkit-transform: rotateY(-180deg);
 }
 .box {
-    -webkit-transform-style: preserve-3d;
+    /*-webkit-transform-style: preserve-3d;*/
     -webkit-transition: all 0.8s ease-out;
     position: relative;
     width: 280px;
@@ -26,7 +26,6 @@ body {
 
 
 }
-
 .face {
     width: 240px;
     height: 240px;
@@ -34,21 +33,13 @@ body {
     position: relative;
 }
 .front {
-    -webkit-transform: translateZ(1px);
+    //*-webkit-transform: translateZ(1px);*/
     background-color: transparent;
-
 }
-
-
 .back {
     background-color: transparent;
-    -webkit-transform: translateZ(-1px);
-
-
+    /*-webkit-transform: translateZ(-1px);*/
 }
-
-
-
 
 /*btn footer*/
 .footerbtn {
@@ -65,13 +56,10 @@ body {
     bottom: 20%;
     left: 50%;
     margin-left: -40%;
-
-
 }
 .bar.bar-balanced.bar-footer,.bar-header {
     background-color: #363f45;
 }
-
 .swipArea {
     width: 100%;
     height: 30%;
@@ -87,18 +75,16 @@ body {
 }
 
 
-
 /*FIGURAS*/
-
 #brick-1 {
     position: absolute;
     top: 60px;
-width: 180px;
- height: 120px;
+    width: 180px;
+    height: 120px;
     clear: both;
 }
 #brick-1 .square {
-  float: left;
+    float: left;
     background-color: #6b46e5;
 }
 #brick-1 .square:last-child {
@@ -106,14 +92,12 @@ width: 180px;
     top: 60px;
     left: 60px;
 }
-
 #brick-2 {
     position: absolute;
     top: 120px;
     width: 60px;
     height: 60px;
 }
-
 #brick-3  {
     position: absolute;
     left: 120px;
@@ -121,7 +105,6 @@ width: 180px;
     width: 120px;
     height: 120px
 }
-
 #brick-3 .square {
     float: left;
     background-color: #28a54c;
@@ -131,14 +114,11 @@ width: 180px;
     top: 60px;
     left: 60px;
 }
-
-
 .square {
     width: 60px;
     height: 60px;
     background-color: #0a9dc7;
 }
-
 .draggable {
     transition: all 0.2s linear;
 }
