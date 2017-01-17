@@ -57,6 +57,7 @@ function homeCtrl ($rootScope, $scope) {
     		|| (x + w) > 240
     		|| (y + h) > 240
     	) {
+    		console.log('Entro aqui');
     		
 			setTargetElementPosition(target, _initialX, _initialY);
 
