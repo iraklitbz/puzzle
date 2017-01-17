@@ -2,6 +2,9 @@
  * Created by iraklitavberidze on 11/1/17.
  */
 function homeCtrl ($rootScope, $scope) {
+    var _initialX = 0,
+    	_initialY = 0;
+
     $scope.rotation = 0;
 
     $scope.rotateBox = function (string) {
@@ -13,23 +16,22 @@ function homeCtrl ($rootScope, $scope) {
 
     interact('.draggable')
     	.draggable({
-            inertia: true,
-            snap: {
-                targets: [
-                    interact.createSnapGrid({x: 60, y: 60})
-                ]
+            'inertia': true,
+            'snap': {
+                'targets': [interact.createSnapGrid({x: 60, y: 60})]
             },
-            onmove: dragMoveListener,
-            onend: restrictContainer
+            'onstart': getInitialPosition,
+            'onmove': dragMoveListener,
+            'onend': restrictContainer
         });
 
-    function restrictContainer (event) {
-    	var elePos = $(event.target).position(),
-    		eleX = elePos.left,
-    		eleY = elePos.top;
+    function getInitialPosition (event) {
+    	var target = event.target
+    		x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
+    		y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
 
-    	console.log('X: ', eleX);
-    	console.log('Y: ', eleY);
+    	_initialX = x;
+    	_initialY = y;
     }
 
     function dragMoveListener (event) {
@@ -37,7 +39,35 @@ function homeCtrl ($rootScope, $scope) {
             x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
             y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
 
-        target.style.webkitTransform = target.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
+        setTargetElementPosition(target, x ,y);
+    }
+
+    function restrictContainer (event) {
+    	var target = event.target,
+    		$target = $(event.target), 
+    		elePos = $target.position(),
+    		x = elePos.left,
+    		y = elePos.top,
+    		h = $target.height(),
+    		w = $target.width();
+
+    	if (
+    		x < 0
+    		|| y < 0
+    		|| (x + w) > 240
+    		|| (y + h) > 240
+    	) {
+    		
+			setTargetElementPosition(target, _initialX, _initialY);
+
+    		return false;
+    	}
+
+    	return true;
+    }
+
+    function setTargetElementPosition (target, x, y) {
+    	target.style.webkitTransform = target.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
 
         target.setAttribute('data-x', x);
         target.setAttribute('data-y', y);
