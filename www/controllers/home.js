@@ -18,12 +18,15 @@ function homeCtrl ($rootScope, $scope) {
     	.draggable({
             'inertia': true,
             'snap': {
-                'targets': [interact.createSnapGrid({x: 60, y: 60})]
+            	'targets': [interact.createSnapGrid({
+            		'x': 60, 
+            		'y': 60
+            	})],
             },
-            'onstart': getInitialPosition,
-            'onmove': dragMoveListener,
-            'onend': restrictContainer
-        });
+            'onmove': dragMoveListener
+        })
+        .on('dragstart', getInitialPosition)
+        .on('dragend', restrictContainer);
 
     function getInitialPosition (event) {
     	var target = event.target
@@ -57,8 +60,6 @@ function homeCtrl ($rootScope, $scope) {
     		|| (x + w) > 240
     		|| (y + h) > 240
     	) {
-    		console.log('Entro aqui');
-    		
 			setTargetElementPosition(target, _initialX, _initialY);
 
     		return false;
@@ -73,6 +74,4 @@ function homeCtrl ($rootScope, $scope) {
         target.setAttribute('data-x', x);
         target.setAttribute('data-y', y);
     }
-
-    window.dragMoveListener = dragMoveListener;
 }
