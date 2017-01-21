@@ -19,7 +19,7 @@ function homeCtrl ($rootScope, $scope) {
             'inertia': true,
             'snap': {
             	'targets': [interact.createSnapGrid({
-            		'x': 60, 
+            		'x': 60,
             		'y': 60
             	})],
             },
