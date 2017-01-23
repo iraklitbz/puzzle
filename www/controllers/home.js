@@ -3,8 +3,7 @@
  */
 function homeCtrl ($rootScope, $scope) {
     var _initialX = 0,
-    	_initialY = 0,
-    	_currentFace = 'front';
+    	_initialY = 0;
 
     $scope.rotation = 0;
 
@@ -55,19 +54,18 @@ function homeCtrl ($rootScope, $scope) {
     		h = $target.height(),
     		w = $target.width();
 
-    	console.log('DEV', piecesCollision());
-
     	if (
     		x < 0
     		|| y < 0
     		|| (x + w) > 240
     		|| (y + h) > 240
-    		|| piecesCollision()
     	) {
 			setTargetElementPosition(target, _initialX, _initialY);
 
     		return false;
     	}
+
+    	testIfWin();
 
     	return true;
     }
@@ -79,20 +77,36 @@ function homeCtrl ($rootScope, $scope) {
         target.setAttribute('data-y', y);
     }
 
-    function piecesCollision () {
-    	var $squares = $('.' + _currentFace).find('.square'),
-    		occupiedPlaces = [];
+    function testIfWin() {
+    	var $rejilla = $('.rejilla'),
+    		$squares = $('.square'),
+    		_rejilla = [],
+    		_squares = [];
 
-    	$squares.each(function (k, v) {
-    		var stringCoord = JSON.stringify($(v).offset());
+    	$rejilla.each(function (k, v) {
+    		var $v = $(v).get(0).getBoundingClientRect();
 
-    		if ($.inArray(stringCoord, occupiedPlaces) < 0) {
-    			return true;
-    		}
-    		
-    		occupiedPlaces.push(stringCoord);
+    		_rejilla.push(JSON.stringify({
+    			'top': $v.top,
+    			'left': $v.left,
+    			'obj': v
+    		}));
     	});
 
-    	return false;
+    	$squares.each(function (k, v) {
+    		var $v = $(v).get(0).getBoundingClientRect();
+    		
+    		_squares.push(JSON.stringify({
+    			'top': $v.top,
+    			'left': $v.left,
+    			'obj': v
+    		}));
+    	});
+
+    	if (_rejilla.sort().join('::') === _squares.sort().join('::')) youWin();
+    }
+
+    function youWin() {
+    	alert('You WIN!!!');
     }
 }
