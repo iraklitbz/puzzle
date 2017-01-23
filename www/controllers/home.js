@@ -65,6 +65,8 @@ function homeCtrl ($rootScope, $scope) {
     		return false;
     	}
 
+    	testIfWin();
+
     	return true;
     }
 
@@ -73,5 +75,38 @@ function homeCtrl ($rootScope, $scope) {
 
         target.setAttribute('data-x', x);
         target.setAttribute('data-y', y);
+    }
+
+    function testIfWin() {
+    	var $rejilla = $('.rejilla'),
+    		$squares = $('.square'),
+    		_rejilla = [],
+    		_squares = [];
+
+    	$rejilla.each(function (k, v) {
+    		var $v = $(v).get(0).getBoundingClientRect();
+
+    		_rejilla.push(JSON.stringify({
+    			'top': $v.top,
+    			'left': $v.left,
+    			'obj': v
+    		}));
+    	});
+
+    	$squares.each(function (k, v) {
+    		var $v = $(v).get(0).getBoundingClientRect();
+    		
+    		_squares.push(JSON.stringify({
+    			'top': $v.top,
+    			'left': $v.left,
+    			'obj': v
+    		}));
+    	});
+
+    	if (_rejilla.sort().join('::') === _squares.sort().join('::')) youWin();
+    }
+
+    function youWin() {
+    	alert('You WIN!!!');
     }
 }
