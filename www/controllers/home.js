@@ -3,7 +3,8 @@
  */
 function homeCtrl ($rootScope, $scope) {
     var _initialX = 0,
-    	_initialY = 0;
+    	_initialY = 0,
+    	_currentFace = 'front';
 
     $scope.rotation = 0;
 
@@ -54,11 +55,14 @@ function homeCtrl ($rootScope, $scope) {
     		h = $target.height(),
     		w = $target.width();
 
+    	console.log('DEV', piecesCollision());
+
     	if (
     		x < 0
     		|| y < 0
     		|| (x + w) > 240
     		|| (y + h) > 240
+    		|| piecesCollision()
     	) {
 			setTargetElementPosition(target, _initialX, _initialY);
 
@@ -73,5 +77,22 @@ function homeCtrl ($rootScope, $scope) {
 
         target.setAttribute('data-x', x);
         target.setAttribute('data-y', y);
+    }
+
+    function piecesCollision () {
+    	var $squares = $('.' + _currentFace).find('.square'),
+    		occupiedPlaces = [];
+
+    	$squares.each(function (k, v) {
+    		var stringCoord = JSON.stringify($(v).offset());
+
+    		if ($.inArray(stringCoord, occupiedPlaces) < 0) {
+    			return true;
+    		}
+    		
+    		occupiedPlaces.push(stringCoord);
+    	});
+
+    	return false;
     }
 }
