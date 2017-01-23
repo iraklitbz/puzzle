@@ -44,6 +44,27 @@ var app = angular.module('starter', ['ionic'])
                 url: '/puzzle3',
                 templateUrl: 'templates/puzzle3.html',
                 controller: 'puzzleCtrl'
+            })
+
+            .state('puzzle4', {
+                name: 'puzzle4',
+                url: '/puzzle4',
+                templateUrl: 'templates/puzzle4.html',
+                controller: 'puzzleCtrl'
+            })
+
+            .state('puzzle5', {
+                name: 'puzzle5',
+                url: '/puzzle5',
+                templateUrl: 'templates/puzzle5.html',
+                controller: 'puzzleCtrl'
+            })
+
+            .state('puzzle6', {
+                name: 'puzzle6',
+                url: '/puzzle6',
+                templateUrl: 'templates/puzzle6.html',
+                controller: 'puzzleCtrl'
             });
 
 
