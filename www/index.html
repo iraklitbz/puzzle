@@ -34,7 +34,7 @@
           src="https://code.jquery.com/jquery-3.1.1.min.js"
           integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
           crossorigin="anonymous"></script>
-  <script src="controllers/home.js"></script>
+  <script src="controllers/puzzle.js"></script>
   <script src="js/app.js"></script>
     <script src="js/interact.js"></script>
 </head>
@@ -44,7 +44,7 @@
 <div class="bar bar-header">
   <h1 class="title">Header</h1>
 </div>
-<ui-view></ui-view>
+<ui-view ng-controller="commonCtrl"></ui-view>
 <div class="bar bar-footer bar-balanced">
   <div class="title">
     <div class="levels">

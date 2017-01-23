@@ -227,60 +227,221 @@ body {
     z-index: 1;
 }
 
+#brick-7  {
+    width: 120px;
+    height: 60px;
+    clear: both;
+}
+
+#brick-7 .square  {
+    float: left;
+}
+
+#brick-9 {
+    width: 180px;
+    height: 60px;
+}
+
+#brick-9 .square {
+   float: left;
+}
+
+#brick-8  {
+    width: 60px;
+    height: 180px;
+}
+
+#brick-10  {
+    width: 120px;
+    height: 120px;
+    clear: both;
+}
+
+#brick-10  {
+    position: relative;
+}
+
+#brick-10   {
+    float: left;
+    position: relative;
+}
+
+#brick-10 .square:nth-child(2)  {
+    position: absolute;
+    top: 60px;
+    left: 60px;
+}
+
+#brick-11  {
+    width: 180px;
+    height: 120px;
+    position: relative;
+}
+
+#brick-11 .square  {
+   float: left;
+}
+
+#brick-11 .square:nth-child(2) {
+    position: absolute;
+    right: 60px;
+    top: 60px;
+}
+
+#brick-11 .square:last-child  {
+    position: absolute;
+    right: 0px;
+    top: 60px;
+}
+
+#brick-12  {
+    width: 120px;
+    height: 120px;
+    position: relative;
+}
+
+#brick-12 .square  {
+    float: left;
+}
+
+#brick-12 .square:last-child  {
+    position: absolute;
+    right: 0px;
+    top: 60px;
+}
+
+#brick-13  {
+    width: 60px;
+    height: 120px;
+    position: absolute;
+}
+
+#brick-14  {
+    width: 180px;
+    height: 60px;
+    position: relative;
+}
+
+#brick-14 .square  {
+    float: left;
+}
+
+#brick-14 .square:last-child  {
+    position: absolute;
+    right: 0px;
+    top: -60px;
+}
+
+
+/*SECOND FIGURE*/
+
+.second .inback .square {
+    background-color: #7b1a1a!important;
+    border: none;
+}
+
+.second #brick-1 {
+    position: absolute;
+    left: 60px;
+}
+
+.second #brick-1 .square {
+    background-color:#f44336 ;
+}
+
+.second #brick-7 .square {
+    background-color:#e53935 ;
+}
+
+.second #brick-8 .square {
+    background-color:#d32f2f ;
+}
+
+
+.second #brick-7  {
+   position: absolute;
+    right: 0px;
+}
+
+.second #brick-8  {
+    position: absolute;
+    top: 60px;
+}
+
+.second #brick-2  {
+  position: absolute;
+    right: 0px;
+}
+
+.second #brick-9 .square {
+    background-color:#f44336 ;
+}
+
+.second #brick-2 .square {
+    background-color:#e53935 ;
+}
+
+
+.second #brick-10 .square{
+     background-color:#d32f2f;
+ }
+
 .bar.bar-balanced.bar-footer {
 background-color: #3f3b3a;
 }
 
-.circle1 {
-    background-color: #00796b;
-}
-.circle2 {
-    background-color: #e6b500;
-}
-.circle3 {
-    background-color: #d32f2f;
-}
-.circle4 {
-    background-color: #0a9dc7;
-}
-.circle5 {
-    background-color: #886aea;
-}
-.circle6 {
-    background-color: #00796b;
-}
-.circle7 {
-    background-color: #e6b500;
-}
-.circle8 {
-    background-color: #d32f2f;
-}
-.circle9 {
-    background-color: #0a9dc7;
-}
-.circle10 {
-    background-color: #886aea;
-}
-.circle11 {
-    background-color: #00796b;
-}
-.circle12 {
-    background-color: #e6b500;
-}
-.circle13 {
-    background-color: #d32f2f;
-}
-.circle14 {
-    background-color: #0a9dc7;
+
+/*SECOND THERD*/
+
+.third .inback .square {
+    background-color: #073961!important;
+    border: none;
 }
 
-.circle15 {
-    background-color: #00796b;
+.third #brick-11  {
+    position: absolute;
+    right: 0px;
+    top: 0px;
 }
 
+.third #brick-11 .square {
+    background-color:#03a9f4 ;
+}
 
+.third #brick-12  {
+  position: absolute;
+    left: 0px;
+    bottom: 0px;
+}
 
+.third .back #brick-12  {
+    position: absolute;
+    left: 0px;
+    top: 60px;
+}
 
+.third #brick-12 .square {
+    background-color:#0288d1 ;
+}
 
+.third #brick-13  {
+   position: absolute;
+    left: 180px;
+    top: 0px;
+}
+
+.third #brick-13 .square {
+    background-color:#0277bd ;
+}
+
+.third #brick-14  {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+.third #brick-14 .square {
+    background-color:#039be5 ;
+}
 
 

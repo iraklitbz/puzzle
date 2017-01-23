@@ -25,16 +25,33 @@ var app = angular.module('starter', ['ionic'])
     .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider
 
-            .state({
-                name: 'home',
-                url: '/',
-                templateUrl: 'templates/home.html',
-                controller: 'homeCtrl'
+            .state('puzzle1', {
+                name: 'puzzle1',
+                url: '/puzzle1',
+                templateUrl: 'templates/puzzle1.html',
+                controller: 'puzzleCtrl'
+            })
+
+            .state('puzzle2', {
+                name: 'puzzle2',
+                url: '/puzzle2',
+                templateUrl: 'templates/puzzle2.html',
+                controller: 'puzzleCtrl'
+            })
+
+            .state('puzzle3', {
+                name: 'puzzle3',
+                url: '/puzzle3',
+                templateUrl: 'templates/puzzle3.html',
+                controller: 'puzzleCtrl'
             });
 
 
 
-        $urlRouterProvider.otherwise('/');
+        $urlRouterProvider.otherwise('/puzzle1');
     });
 
-app.controller('homeCtrl', ['$rootScope', '$scope', homeCtrl]);
+app.controller('commonCtrl', ['$rootScope', '$scope', function ($rootScope, $scope) {
+    $rootScope.rounds = 0;
+}]);
+app.controller('puzzleCtrl', ['$rootScope', '$scope', '$state', '$stateParams', puzzleCtrl]);

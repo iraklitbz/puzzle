@@ -1,7 +1,7 @@
 /**
  * Created by iraklitavberidze on 11/1/17.
  */
-function homeCtrl ($rootScope, $scope) {
+function puzzleCtrl ($rootScope, $scope, $state, $stateParams) {
     var _initialX = 0,
     	_initialY = 0;
 
@@ -107,6 +107,8 @@ function homeCtrl ($rootScope, $scope) {
     }
 
     function youWin() {
-    	alert('You WIN!!!');
+    	$rootScope.rounds = $rootScope.rounds + 1;
+
+    	$state.go('puzzle' + $rootScope.rounds);
     }
 }
