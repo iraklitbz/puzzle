@@ -73,7 +73,6 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams) {
 
     function setTargetElementPosition (target, x, y) {
     	target.style.webkitTransform = target.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
-
         target.setAttribute('data-x', x);
         target.setAttribute('data-y', y);
     }
