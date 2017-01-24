@@ -67,9 +67,12 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams) {
     		|| (y + h) > 240
     	) {
 			setTargetElementPosition(target, _initialX, _initialY);
+            
             secaudio.play();
-    		return false;
+    		
+            return false;
     	}
+        
         audio.play();
     	testIfWin();
 
@@ -112,7 +115,7 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams) {
     }
 
     function piecesCollision() {
-        var _collision = false;
+        var _collision = false,
             _positions =  [],
             $currentFace = $('.face').not('.inback').find('.square');
 
@@ -136,6 +139,7 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams) {
 
     function youWin() {
         forthaudio.play();
+
     	$rootScope.rounds = $rootScope.rounds + 1;
 
     	$state.go('puzzle' + $rootScope.rounds);
