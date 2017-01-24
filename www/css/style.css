@@ -24,6 +24,10 @@ body {
     -webkit-transform: rotateY(-180deg);
 }
 
+.sounds {
+    position:absolute
+}
+
 .box {
     /*-webkit-transform-style: preserve-3d;*/
     -webkit-transition: all 0.3s ease-in-out;
@@ -96,6 +100,7 @@ body {
 }
 .bar.bar-balanced.bar-footer {
     background-color: #363f45;
+    background-image: none;
 }
 
 
@@ -207,35 +212,25 @@ body {
 }
 
 
-.lvl{
-    width: 10px;
-    height: 10px;
-    background-color: #ddd;
-    border-radius: 50%;
-    position: relative;
-    z-index: 10;
-}
 
 .levels {
     display: flex;
     width: 100%;
     height: 100%;
+    padding: 0 10px;
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: nowrap;
     align-items: center;
-    position: relative;
-}
-
-.levels:after {
-    content: "";
-    width: 100%;
-    height: 2px;
-    display: block;
     position: absolute;
-    top: 21px;
-    background-color: #6b6767;
-    z-index: 1;
+}
+.lvl{
+    width: 10px;
+    height: 10px;
+    background-color: #3f3b3a;
+    border-radius: 50%;
+    position: relative;
+    z-index: 10;
 }
 
 #brick-7  {
@@ -378,10 +373,173 @@ body {
 }
 
 
+#brick-18 {
+   position: relative;
+    width: 120px;
+    clear: both;
+}
+
+#brick-18 .square {
+    float: left;
+}
+
+#brick-19 {
+    position: relative;
+}
+
+#brick-19 .square {
+   float: left;
+}
+
+#brick-19 .square:first-child {
+    position: absolute;
+    left: -60px;
+    top: 60px;
+}
+
+#brick-19 .square:nth-child(2) {
+    position: absolute;
+    left: 0px;
+    top: 60px;
+}
+
+#brick-20 {
+    position: relative;
+    width: 60px;
+    height: 180px;
+}
+#brick-20 .square:last-child {
+    position: absolute;
+    bottom: 0px;
+    left: 60px;
+}
+
+#brick-21 {
+    position: relative;
+    width: 60px;
+    height: 180px;
+}
+
+#brick-21 .square:last-child {
+    position: absolute;
+    bottom: 60px;
+    left: -60px;
+}
+
+#brick-22 {
+    position: relative;
+    width: 120px;
+    height: 180px;
+}
+
+#brick-22 .square{
+   position: relative;
+    left: 60px;
+}
+
+#brick-22 .square:first-child{
+    position: absolute;
+    left: 0px;
+}
+
+#brick-23 {
+    position: relative;
+    width: 120px;
+    height: 180px;
+    clear: both;
+}
+
+#brick-23 .square {
+    float: left;
+}
+
+#brick-23 .square:first-child {
+    position: absolute;
+    top: 60px;
+    left: 0px;
+}
+
+#brick-23 .square:last-child{
+    position: absolute;
+    top: -60px;
+    right: 0px;
+}
+
+#brick-24 {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    clear: both;
+}
+
+#brick-24 .square {
+   float: left;
+}
+
+#brick-24 .square {
+    position: relative;
+    top: 120px;
+}
+
+#brick-24 .square:last-child{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+#brick-24 .square:nth-child(4){
+    position: absolute;
+    top: 60px;
+    right: 0px;
+}
+
+
+#brick-25 {
+    position: relative;
+    width: 180px;
+    clear: both;
+    height: 120px;
+}
+
+#brick-25 .square {
+     float: left;
+    position: relative;
+    top: 60px;
+ }
+
+#brick-25 .square:nth-child(2) {
+   position: absolute;
+    top: 0px;
+    left: 60px;
+}
+
+#brick-26 {
+    position: relative;
+    width: 180px;
+    height: 120px;
+    clear: both;
+}
+
+#brick-26 .square {
+   float: left;
+    position: relative;
+    top: 60px;
+}
+
+#brick-26 .square:first-child {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+
+
+
+
 /*SECOND FIGURE*/
 
 .second .inback .square {
-    background-color: #7b1a1a!important;
+    background-color: #4c1111!important;
     border: none;
 }
 
@@ -432,7 +590,8 @@ body {
  }
 
 .bar.bar-balanced.bar-footer {
-background-color: #3f3b3a;
+background-color: #fff;
+    padding: 0px;
 }
 
 
@@ -554,7 +713,7 @@ background-color: #3f3b3a;
 }
 
 .fivth #brick-12 .square {
-    background-color: #5e35b1;
+    background-color: #e040fb;
 }
 
 .fivth #brick-7  {
@@ -563,7 +722,7 @@ background-color: #3f3b3a;
 }
 
 .fivth #brick-7 .square {
-    background-color: #512da8;
+    background-color: #d500f9;
 }
 
 .fivth #brick-17  {
@@ -572,15 +731,15 @@ background-color: #3f3b3a;
 }
 
 .fivth #brick-17 .square {
-    background-color: #4527a0;
+    background-color: #aa00ff;
 }
 
 .fivth #brick-5 .square {
-    background-color: #5e35b1;
+    background-color: #aa00ff;
 }
 
 .fivth #brick-10 .square {
-    background-color: #4527a0;
+    background-color: #d500f9;
 }
 
 /*sisxth*/
@@ -647,3 +806,366 @@ background-color: #3f3b3a;
 .sisxth #brick-3 .rep {
     background-color: #00695c;
 }
+
+
+/*SEVENTH*/
+
+.seventh .inback .square {
+    background-color: #4c1111!important;
+    border: none;
+}
+
+.seventh #brick-19  {
+    position: absolute;
+    right: 0px;
+    top: 60px;
+}
+
+.seventh #brick-19 .square {
+    background-color:#f44336 ;
+}
+
+.seventh #brick-2  {
+    position: absolute;
+    left: 60px;
+    top: 60px;
+}
+
+.seventh #brick-2 .square {
+    background-color:#e53935 ;
+}
+
+.seventh .repi  {
+    position: absolute;
+    right: 0px;
+    top: 120px;
+}
+
+.seventh .repi .rep {
+    background-color:#d32f2f!important;
+}
+
+.seventh #brick-20  {
+    position: absolute;
+    left: 0px;
+    top: 60px;
+}
+
+.seventh #brick-20 .square {
+    background-color:#f44336 ;
+}
+
+.seventh #brick-21  {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+.seventh #brick-21 .square {
+    background-color:#d32f2f ;
+}
+
+.seventh #brick-7  {
+    position: absolute;
+    right: 60px;
+    top: 120px;
+}
+
+.seventh #brick-7 .square {
+    background-color:#e53935 ;
+}
+
+
+
+/*EIGHT*/
+
+.eight .inback .square {
+    background-color: #073961!important;
+    border: none;
+}
+
+.eight #brick-7  {
+    position: absolute;
+    top: 60px;
+    left: 0px;
+}
+
+.eight #brick-7 .square {
+    background-color:#03a9f4 ;
+}
+
+.eight #brick-18  {
+    position: absolute;
+    bottom: 0px;
+    right: 60px;
+}
+
+.eight #brick-18 .square {
+    background-color:#0288d1 ;
+}
+
+.eight #brick-22  {
+    position: absolute;
+    top: 60px;
+    right: 0px;
+}
+
+
+.eight #brick-22 .square {
+    background-color:#0277bd ;
+}
+
+.eight #brick-3  {
+    position: absolute;
+    top: 0px;
+    left: 60px;
+}
+
+.eight #brick-3 .square {
+    background-color:#03a9f4 ;
+}
+
+.eight #brick-23  {
+    position: absolute;
+    top: 120px;
+    right: 0px;
+}
+
+.eight #brick-23 .square {
+    background-color:#0277bd ;
+}
+
+
+
+/*NINTH*/
+.ninth .inback .square {
+    background-color: #4a3a08!important;
+}
+.ninth #brick-18  {
+    position: absolute;
+    top: 0px;
+    right: 60px;
+}
+
+.ninth #brick-18 .square {
+    background-color:#ffc107 ;
+}
+
+.ninth #brick-24  {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+.ninth #brick-24 .square {
+    background-color:#ffa000 ;
+}
+
+.ninth #brick-12  {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.ninth #brick-12 .square {
+    background-color:#ffa000 ;
+}
+
+.ninth #brick-2  {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+.ninth #brick-2 .square {
+    background-color:#ffa000 ;
+}
+
+.ninth #brick-2  {
+    position: absolute;
+    top: 180px;
+    right: 0px;
+}
+
+.ninth #brick-15  {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.ninth #brick-15 .square {
+    background-color:#ffb300 ;
+}
+
+
+/*TENTH*/
+.tenth .inback .square {
+    background-color: #1f1138!important;
+}
+
+.tenth #brick-22  {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+.tenth #brick-22 .square {
+    background-color:#e040fb ;
+}
+
+.tenth #brick-25 .square {
+    background-color:#d500f9 ;
+}
+
+.tenth #brick-7  {
+    position: absolute;
+    bottom: 60px;
+    right: 60px;
+}
+
+.tenth #brick-7 .square {
+    background-color:#aa00ff ;
+}
+
+
+.tenth .repi  {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 120px;
+    height: 60px;
+}
+
+.tenth .repi .rep {
+    background-color:#e040fb ;
+    float: right;
+}
+
+
+.tenth #brick-21  {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.tenth #brick-21 .square {
+    background-color:#d500f9 ;
+}
+
+
+
+/*ELEVENTH*/
+
+.elevn .inback .square {
+    background-color: #04413a!important;
+    border: none;
+}
+
+.elevn #brick-22  {
+    position: absolute;
+    top: 60px;
+    right: 0px;
+}
+
+.elevn  #brick-22 .square{
+    background-color:#00796b ;
+}
+
+.elevn #brick-2  {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.elevn  #brick-2 .square{
+    background-color:#009688 ;
+}
+
+.elevn  .repi {
+    position: absolute;
+    bottom: 0px;
+    right: 60px;
+}
+
+.elevn  .repi .rep{
+    background-color:#00897b ;
+}
+
+.elevn .repirepi {
+    position: absolute;
+    bottom: 60px;
+    right: 60px;
+}
+
+.elevn .repirepi .reprep{
+    background-color:#00695c ;
+}
+
+
+.elevn  #brick-25 .square{
+    background-color:#00796b ;
+}
+
+.elevn #brick-12 {
+    position: absolute;
+    bottom: 0px;
+    right: 60px;
+}
+
+.elevn  #brick-12 .square{
+    background-color:#00897b ;
+}
+
+.elevn #brick-13 {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+.elevn  #brick-13 .square{
+    background-color:#00695c ;
+}
+
+
+
+
+/*TWELW*/
+
+.twelve .inback .square {
+    background-color: #4c1111!important;
+    border: none;
+}
+
+.twelve #brick-14 {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+.twelve  #brick-17 .square{
+    background-color:#f44336 ;
+}
+
+.twelve #brick-16 {
+    position: absolute;
+    bottom: 60px;
+    left: 0px;
+}
+
+.twelve  #brick-16 .square{
+    background-color:#e53935 ;
+}
+
+.twelve  #brick-14 .square{
+    background-color:#d32f2f ;
+}
+
+.twelve #brick-26 {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.twelve  #brick-26 .square{
+    background-color:#e53935 ;
+}
+
