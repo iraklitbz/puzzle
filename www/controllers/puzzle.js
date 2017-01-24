@@ -4,12 +4,14 @@
 function puzzleCtrl ($rootScope, $scope, $state, $stateParams) {
     var audio = $("#soltarsound")[0];
     var secaudio = $("#arrastrarsound")[0];
+    var thirdaudio = $("#girarsound")[0];
     var _initialX = 0,
     	_initialY = 0;
 
     $scope.rotation = 0;
 
     $scope.rotateBox = function (string) {
+        thirdaudio.play();
         $scope.rotation = $scope.rotation === -180 ? 0 : -180;
 
         $('.' + string).css('transform', 'rotateY(' + $scope.rotation + 'deg)');
