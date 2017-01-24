@@ -2,6 +2,8 @@
  * Created by iraklitavberidze on 11/1/17.
  */
 function puzzleCtrl ($rootScope, $scope, $state, $stateParams) {
+    var audio = $("#soltarsound")[0];
+    var secaudio = $("#arrastrarsound")[0];
     var _initialX = 0,
     	_initialY = 0;
 
@@ -21,7 +23,7 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams) {
             	'targets': [interact.createSnapGrid({
             		'x': 60,
             		'y': 60
-            	})],
+            	})]
             },
             'onmove': dragMoveListener
         })
@@ -38,6 +40,7 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams) {
     }
 
     function dragMoveListener (event) {
+        secaudio.play();
         var target = event.target,
             x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
             y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
@@ -46,6 +49,7 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams) {
     }
 
     function restrictContainer (event) {
+        audio.play();
     	var target = event.target,
     		$target = $(event.target), 
     		elePos = $target.position(),
