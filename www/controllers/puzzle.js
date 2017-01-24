@@ -1,7 +1,7 @@
 /**
  * Created by iraklitavberidze on 11/1/17.
  */
-function homeCtrl ($rootScope, $scope) {
+function puzzleCtrl ($rootScope, $scope, $state, $stateParams) {
     var _initialX = 0,
     	_initialY = 0,
     	_currentFace = 'front';
@@ -20,7 +20,7 @@ function homeCtrl ($rootScope, $scope) {
             'inertia': true,
             'snap': {
             	'targets': [interact.createSnapGrid({
-            		'x': 60, 
+            		'x': 60,
             		'y': 60
             	})],
             },
@@ -69,6 +69,8 @@ function homeCtrl ($rootScope, $scope) {
     		return false;
     	}
 
+    	testIfWin();
+
     	return true;
     }
 
@@ -78,21 +80,39 @@ function homeCtrl ($rootScope, $scope) {
         target.setAttribute('data-x', x);
         target.setAttribute('data-y', y);
     }
+    
+    function testIfWin() {
+    	var $rejilla = $('.rejilla'),
+    		$squares = $('.square'),
+    		_rejilla = [],
+    		_squares = [];
 
-    function piecesCollision () {
-    	var $squares = $('.' + _currentFace).find('.square'),
-    		occupiedPlaces = [];
+    	$rejilla.each(function (k, v) {
+    		var $v = $(v).get(0).getBoundingClientRect();
 
-    	$squares.each(function (k, v) {
-    		var stringCoord = JSON.stringify($(v).offset());
-
-    		if ($.inArray(stringCoord, occupiedPlaces) < 0) {
-    			return true;
-    		}
-    		
-    		occupiedPlaces.push(stringCoord);
+    		_rejilla.push(JSON.stringify({
+    			'top': $v.top,
+    			'left': $v.left,
+    			'obj': v
+    		}));
     	});
 
-    	return false;
+    	$squares.each(function (k, v) {
+    		var $v = $(v).get(0).getBoundingClientRect();
+    		
+    		_squares.push(JSON.stringify({
+    			'top': $v.top,
+    			'left': $v.left,
+    			'obj': v
+    		}));
+    	});
+
+    	if (_rejilla.sort().join('::') === _squares.sort().join('::')) youWin();
+    }
+
+    function youWin() {
+    	$rootScope.rounds = $rootScope.rounds + 1;
+
+    	$state.go('puzzle' + $rootScope.rounds);
     }
 }
