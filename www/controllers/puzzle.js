@@ -2,12 +2,17 @@
  * Created by iraklitavberidze on 11/1/17.
  */
 function puzzleCtrl ($rootScope, $scope, $state, $stateParams) {
+    var audio = $("#soltarsound")[0];
+    var secaudio = $("#arrastrarsound")[0];
+    var thirdaudio = $("#girarsound")[0];
+    var forthaudio = $("#donesound")[0];
     var _initialX = 0,
     	_initialY = 0;
 
     $scope.rotation = 0;
 
     $scope.rotateBox = function (string) {
+        thirdaudio.play();
         $scope.rotation = $scope.rotation === -180 ? 0 : -180;
 
         $('.' + string).css('transform', 'rotateY(' + $scope.rotation + 'deg)');
@@ -21,7 +26,7 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams) {
             	'targets': [interact.createSnapGrid({
             		'x': 60,
             		'y': 60
-            	})],
+            	})]
             },
             'onmove': dragMoveListener
         })
@@ -62,10 +67,10 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams) {
     		|| (y + h) > 240
     	) {
 			setTargetElementPosition(target, _initialX, _initialY);
-
+            secaudio.play();
     		return false;
     	}
-
+        audio.play();
     	testIfWin();
 
     	return true;
@@ -130,6 +135,7 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams) {
     }
 
     function youWin() {
+        forthaudio.play();
     	$rootScope.rounds = $rootScope.rounds + 1;
 
     	$state.go('puzzle' + $rootScope.rounds);
