@@ -5,6 +5,7 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams) {
     var audio = $("#soltarsound")[0];
     var secaudio = $("#arrastrarsound")[0];
     var thirdaudio = $("#girarsound")[0];
+    var forthaudio = $("#donesound")[0];
     var _initialX = 0,
     	_initialY = 0;
 
@@ -42,7 +43,6 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams) {
     }
 
     function dragMoveListener (event) {
-        secaudio.play();
         var target = event.target,
             x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
             y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
@@ -51,7 +51,6 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams) {
     }
 
     function restrictContainer (event) {
-        audio.play();
     	var target = event.target,
     		$target = $(event.target), 
     		elePos = $target.position(),
@@ -68,10 +67,10 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams) {
     		|| (y + h) > 240
     	) {
 			setTargetElementPosition(target, _initialX, _initialY);
-
+            secaudio.play();
     		return false;
     	}
-
+        audio.play();
     	testIfWin();
 
     	return true;
@@ -137,6 +136,7 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams) {
     }
 
     function youWin() {
+        forthaudio.play();
     	$rootScope.rounds = $rootScope.rounds + 1;
 
     	$state.go('puzzle' + $rootScope.rounds);

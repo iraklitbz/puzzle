@@ -263,7 +263,7 @@ body {
 }
 
 #brick-10  {
-    width: 120px;
+    width: 60px;
     height: 120px;
     clear: both;
 }
@@ -356,6 +356,7 @@ body {
 #brick-16 {
     clear: both;
     width: 180px;
+    height: 60px;
 }
 #brick-16 .square {
     float: left;
@@ -620,7 +621,7 @@ background-color: #3f3b3a;
 
 .sisxth #brick-16  {
     position: absolute;
-    bottom: 0px;
+    bottom: 60px;
 
 }
 
