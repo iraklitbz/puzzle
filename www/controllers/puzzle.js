@@ -3,8 +3,7 @@
  */
 function puzzleCtrl ($rootScope, $scope, $state, $stateParams) {
     var _initialX = 0,
-    	_initialY = 0,
-    	_currentFace = 'front';
+    	_initialY = 0;
 
     $scope.rotation = 0;
 
@@ -55,14 +54,12 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams) {
     		h = $target.height(),
     		w = $target.width();
 
-    	console.log('DEV', piecesCollision());
-
     	if (
-    		x < 0
+            piecesCollision()
+    		|| x < 0
     		|| y < 0
     		|| (x + w) > 240
     		|| (y + h) > 240
-    		|| piecesCollision()
     	) {
 			setTargetElementPosition(target, _initialX, _initialY);
 
@@ -80,7 +77,7 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams) {
         target.setAttribute('data-x', x);
         target.setAttribute('data-y', y);
     }
-    
+
     function testIfWin() {
     	var $rejilla = $('.rejilla'),
     		$squares = $('.square'),
@@ -108,6 +105,29 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams) {
     	});
 
     	if (_rejilla.sort().join('::') === _squares.sort().join('::')) youWin();
+    }
+
+    function piecesCollision() {
+        var _collision = false;
+            _positions =  [],
+            $currentFace = $('.face').not('.inback').find('.square');
+
+            $currentFace.each(function (k, v) {
+                var $v = $(v).get(0).getBoundingClientRect(),
+                    _objString = JSON.stringify({
+                        'top': $v.top,
+                        'left': $v.left,
+                        'obj': v
+                    });
+
+                if ($.inArray(_objString, _positions) > -1) {
+                    _collision = true;
+                }
+
+                _positions.push(_objString);
+            });
+
+        return _collision;
     }
 
     function youWin() {
