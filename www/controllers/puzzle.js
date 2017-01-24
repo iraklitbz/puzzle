@@ -2,11 +2,11 @@
  * Created by iraklitavberidze on 11/1/17.
  */
 function puzzleCtrl ($rootScope, $scope, $state, $stateParams) {
-    var audio = $("#soltarsound")[0];
-    var secaudio = $("#arrastrarsound")[0];
-    var thirdaudio = $("#girarsound")[0];
-    var forthaudio = $("#donesound")[0];
-    var _initialX = 0,
+    var audio = $("#soltarsound")[0],
+        secaudio = $("#arrastrarsound")[0],
+        thirdaudio = $("#girarsound")[0],
+        forthaudio = $("#donesound")[0],
+        _initialX = 0,
     	_initialY = 0;
 
     $scope.rotation = 0;
