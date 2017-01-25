@@ -44,7 +44,7 @@ body {
     z-index: 1!important;
 }
 .inback .square {
-    background-color: #04413a!important;
+    background-color: #3f3b3a!important;
     border: none;
 }
 .face {
@@ -532,16 +532,30 @@ body {
     left: 0px;
 }
 
+#brick-27 {
+    position: relative;
+    width: 180px;
+    height: 120px;
+    clear: both;
+}
 
+#brick-27 .square {
+    float: left;
+}
 
+#brick-27 .square:last-child {
+    position: absolute;
+    right: 0px;
+    top: 60px;
+}
 
 
 /*SECOND FIGURE*/
 
-.second .inback .square {
-    background-color: #4c1111!important;
-    border: none;
-}
+/*.second .inback .square {*/
+    /*background-color: #4c1111!important;*/
+    /*border: none;*/
+/*}*/
 
 .second #brick-1 {
     position: absolute;
@@ -597,10 +611,10 @@ background-color: #fff;
 
 /*THERD*/
 
-.third .inback .square {
-    background-color: #073961!important;
-    border: none;
-}
+/*.third .inback .square {*/
+    /*background-color: #073961!important;*/
+    /*border: none;*/
+/*}*/
 
 .third #brick-11  {
     position: absolute;
@@ -649,10 +663,10 @@ background-color: #fff;
 }
 
 /*FOURTH*/
-.forth .inback .square {
-    background-color: #4a3a08!important;
-    border: none;
-}
+/*.forth .inback .square {*/
+    /*background-color: #4a3a08!important;*/
+    /*border: none;*/
+/*}*/
 
 .forth #brick-15 {
    position: absolute;
@@ -702,10 +716,10 @@ background-color: #fff;
 
 /*FIFTH*/
 
-.fivth .inback .square {
-    background-color: #1f1138!important;
-    border: none;
-}
+/*.fivth .inback .square {*/
+    /*background-color: #1f1138!important;*/
+    /*border: none;*/
+/*}*/
 
 .fivth #brick-12  {
    position: absolute;
@@ -744,10 +758,10 @@ background-color: #fff;
 
 /*sisxth*/
 
-.sisxth .inback .square {
-    background-color: #04413a!important;
-    border: none;
-}
+/*.sisxth .inback .square {*/
+    /*background-color: #04413a!important;*/
+    /*border: none;*/
+/*}*/
 
 .sisxth #brick-12  {
     position: absolute;
@@ -810,10 +824,10 @@ background-color: #fff;
 
 /*SEVENTH*/
 
-.seventh .inback .square {
-    background-color: #4c1111!important;
-    border: none;
-}
+/*.seventh .inback .square {*/
+    /*background-color: #4c1111!important;*/
+    /*border: none;*/
+/*}*/
 
 .seventh #brick-19  {
     position: absolute;
@@ -879,10 +893,10 @@ background-color: #fff;
 
 /*EIGHT*/
 
-.eight .inback .square {
-    background-color: #073961!important;
-    border: none;
-}
+/*.eight .inback .square {*/
+    /*background-color: #073961!important;*/
+    /*border: none;*/
+/*}*/
 
 .eight #brick-7  {
     position: absolute;
@@ -938,9 +952,9 @@ background-color: #fff;
 
 
 /*NINTH*/
-.ninth .inback .square {
-    background-color: #4a3a08!important;
-}
+/*.ninth .inback .square {*/
+    /*background-color: #4a3a08!important;*/
+/*}*/
 .ninth #brick-18  {
     position: absolute;
     top: 0px;
@@ -999,9 +1013,9 @@ background-color: #fff;
 
 
 /*TENTH*/
-.tenth .inback .square {
-    background-color: #1f1138!important;
-}
+/*.tenth .inback .square {*/
+    /*background-color: #1f1138!important;*/
+/*}*/
 
 .tenth #brick-22  {
     position: absolute;
@@ -1055,10 +1069,10 @@ background-color: #fff;
 
 /*ELEVENTH*/
 
-.elevn .inback .square {
-    background-color: #04413a!important;
-    border: none;
-}
+/*.elevn .inback .square {*/
+    /*background-color: #04413a!important;*/
+    /*border: none;*/
+/*}*/
 
 .elevn #brick-22  {
     position: absolute;
@@ -1130,10 +1144,10 @@ background-color: #fff;
 
 /*TWELW*/
 
-.twelve .inback .square {
-    background-color: #4c1111!important;
-    border: none;
-}
+/*.twelve .inback .square {*/
+    /*background-color: #4c1111!important;*/
+    /*border: none;*/
+/*}*/
 
 .twelve #brick-14 {
     position: absolute;
@@ -1169,3 +1183,180 @@ background-color: #fff;
     background-color:#e53935 ;
 }
 
+/*thirty*/
+/*.thirty .inback .square {*/
+    /*background-color: #073961!important;*/
+    /*border: none;*/
+/*}*/
+
+.thirty #brick-13 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.thirty  #brick-13 .square{
+    background-color:#03a9f4 ;
+}
+
+.thirty #brick-3 {
+    position: absolute;
+    top: 0px;
+    left: 180px;
+}
+
+.thirty  #brick-3 .square{
+    background-color:#0288d1 ;
+}
+
+.thirty #brick-23 {
+    position: absolute;
+    top: 120px;
+    left: 0px;
+}
+
+.thirty  #brick-23 .square{
+    background-color:#0277bd ;
+}
+
+.thirty #brick-18 {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.thirty  #brick-18 .square{
+    background-color:#0277bd ;
+}
+
+.thirty #brick-15 {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+.thirty  #brick-15 .square{
+    background-color:#03a9f4 ;
+}
+
+
+/*fourty*/
+
+/*.fourty .inback .square {*/
+    /*background-color: #4a3a08!important;*/
+/*}*/
+
+
+.fourty #brick-14 {
+    position: absolute;
+    top: 120px;
+    left: 0px;
+}
+.fourty  #brick-14 .square{
+      background-color:#ffc107 ;
+  }
+
+
+.fourty  #brick-12 .square{
+    background-color:#ffa000 ;
+}
+
+.fourty #brick-3 {
+    position: absolute;
+    bottom: 0px;
+    left: 180px;
+}
+
+.fourty  #brick-3 .square{
+    background-color:#ffa000 ;
+}
+
+.fourty #brick-2 {
+    position: absolute;
+    bottom: 60px;
+    left: 60px;
+}
+
+
+.fourty  #brick-2 .square{
+    background-color:#ffc107 ;
+}
+
+.fourty .back #brick-12 {
+    position: absolute;
+    top: 60px;
+    left: 60px;
+}
+
+.fourty  #brick-12 .square{
+    background-color:#ffa000 ;
+}
+
+.fourty #brick-13 {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
+.fourty  #brick-13 .square{
+    background-color:#ffa000 ;
+}
+
+
+
+/*fifthty*/
+/*TENTH*/
+/*.fifthty .inback .square {*/
+    /*background-color: #1f1138!important;*/
+/*}*/
+
+.fifthty #brick-13 {
+    position: absolute;
+    top: 0px;
+    left: 120px;
+}
+
+.fifthty  #brick-13 .square{
+    background-color:#e040fb ;
+}
+
+.fifthty #brick-27 {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+.fifthty  #brick-27 .square{
+    background-color:#d500f9 ;
+}
+
+
+.fifthty #brick-3 {
+    position: absolute;
+    top: 0px;
+    right: 60px;
+}
+
+.fifthty  #brick-3 .square{
+    background-color:#aa00ff ;
+}
+
+.fifthty .back #brick-13 {
+    position: absolute;
+    top: 120px;
+    left: 0px;
+}
+
+.fifthty  #brick-13 .square{
+    background-color:#e040fb ;
+}
+
+.fifthty #brick-23 {
+    position: absolute;
+    top: 120px;
+    right: 0px;
+}
+
+.fifthty  #brick-23 .square{
+    background-color:#d500f9 ;
+}
