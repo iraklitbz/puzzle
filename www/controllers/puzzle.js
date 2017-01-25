@@ -19,6 +19,7 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window) {
         if ($event.target.className === 'box-scene disable-user-behavior') {
             if (thirdaudio.paused) {
                 thirdaudio.play();
+                thirdaudio.volume = 0.3;
             }else{
                 thirdaudio.currentTime = 0
             }
@@ -80,6 +81,7 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window) {
 
             if (secaudio.paused) {
                 secaudio.play();
+                secaudio.volume = 0.3;
             }else{
                 secaudio.currentTime = 0
             }
@@ -89,6 +91,7 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window) {
 
         if (audio.paused) {
             audio.play();
+            audio.volume = 0.3;
         }else{
             audio.currentTime = 0
         }
@@ -156,6 +159,7 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window) {
     function youWin() {
         if (forthaudio.paused) {
             forthaudio.play();
+            forthaudio.volume = 0.3;
         }else{
             forthaudio.currentTime = 0
         }

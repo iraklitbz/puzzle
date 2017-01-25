@@ -56,6 +56,7 @@ app.controller('homeCtrl', ['$rootScope', function ($rootScope) {
     $rootScope.select = function () {
         if (fifthaudio.paused) {
             fifthaudio.play();
+            fifthaudio.volume = 0.3;
         }else{
             fifthaudio.currentTime = 0
         }
@@ -64,6 +65,7 @@ app.controller('homeCtrl', ['$rootScope', function ($rootScope) {
     $rootScope.nop = function ($event) {
         if (seventhaudio.paused) {
             seventhaudio.play();
+            seventhaudio.volume = 0.5;
         }else{
             seventhaudio.currentTime = 0
         }
@@ -76,6 +78,7 @@ app.controller('footerCtrl', ['$rootScope', function ($rootScope) {
     $rootScope.back = function () {
         if (sixthaudio.paused) {
             sixthaudio.play();
+            sixthaudio.volume = 0.3;
         }else{
             sixthaudio.currentTime = 0
         }
