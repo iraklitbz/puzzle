@@ -4,12 +4,6 @@ body {
 }
 
 /*Nav MENU*/
-.putFront {
-    z-index: 1000;
-}
-.putbehind {
-    z-index: 100;
-}
 .home .bar-footer{
     display: none;
 }
@@ -52,24 +46,27 @@ body {
 }
 
 .nav-menu .col {
-    display: flex;
     height: 80px;
+    margin-bottom: 8px;
+}
+
+.nav-menu .col a {
+    display: flex;
+    width: 100%;
+    height: 100%;
     justify-content: center;
     align-items: center;
-    margin-bottom: 15px;
-    margin-right: 15px;
     border-radius: 4px;
     border: 5px solid #3f3b3a;
+    padding: 5px;
 }
+
 
 .nav-menu .col i{
  font-size: 2em;
     color: #3f3b3a;
 }
 
-.nav-menu .col:last-child {
-    margin-right: 0px;
-}
 
 .nav-menu  .locked {
     background-color: #fff!important;

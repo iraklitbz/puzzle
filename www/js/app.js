@@ -55,9 +55,11 @@ app.controller('homeCtrl', ['$rootScope', function ($rootScope) {
 
     $rootScope.select = function () {
         fifthaudio.play();
-    }
-    $rootScope.nop = function () {
+    };
+
+    $rootScope.nop = function ($event) {
         seventhaudio.play();
+        $($event.currentTarget).effect("shake", {distance:1}, 200);
     }
 }]);
 app.controller('footerCtrl', ['$rootScope', function ($rootScope) {

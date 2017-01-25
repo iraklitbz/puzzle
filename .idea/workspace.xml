@@ -2,27 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7a824405-fb61-4255-ae3c-afacddd56505" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/controllers/puzzle.js" afterPath="$PROJECT_DIR$/www/controllers/puzzle.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/style.css" afterPath="$PROJECT_DIR$/www/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/index.html" afterPath="$PROJECT_DIR$/www/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/app.js" afterPath="$PROJECT_DIR$/www/js/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/home.html" afterPath="$PROJECT_DIR$/www/templates/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/puzzle1.html" afterPath="$PROJECT_DIR$/www/templates/puzzle1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/puzzle10.html" afterPath="$PROJECT_DIR$/www/templates/puzzle10.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/puzzle11.html" afterPath="$PROJECT_DIR$/www/templates/puzzle11.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/puzzle12.html" afterPath="$PROJECT_DIR$/www/templates/puzzle12.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/puzzle13.html" afterPath="$PROJECT_DIR$/www/templates/puzzle13.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/puzzle14.html" afterPath="$PROJECT_DIR$/www/templates/puzzle14.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/puzzle15.html" afterPath="$PROJECT_DIR$/www/templates/puzzle15.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/puzzle2.html" afterPath="$PROJECT_DIR$/www/templates/puzzle2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/puzzle3.html" afterPath="$PROJECT_DIR$/www/templates/puzzle3.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/puzzle4.html" afterPath="$PROJECT_DIR$/www/templates/puzzle4.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/puzzle5.html" afterPath="$PROJECT_DIR$/www/templates/puzzle5.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/puzzle6.html" afterPath="$PROJECT_DIR$/www/templates/puzzle6.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/puzzle7.html" afterPath="$PROJECT_DIR$/www/templates/puzzle7.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/puzzle8.html" afterPath="$PROJECT_DIR$/www/templates/puzzle8.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/templates/puzzle9.html" afterPath="$PROJECT_DIR$/www/templates/puzzle9.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,11 +20,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="593">
-              <caret line="52" column="40" lean-forward="false" selection-start-line="52" selection-start-column="27" selection-end-line="52" selection-end-column="40" />
+            <state relative-caret-position="623">
+              <caret line="56" column="8" lean-forward="false" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="elementtree.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/platforms/ios/cordova/node_modules/elementtree/lib/elementtree.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="312">
+              <caret line="105" column="0" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -50,18 +43,18 @@
       <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="21" lean-forward="true" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+            <state relative-caret-position="525">
+              <caret line="35" column="130" lean-forward="false" selection-start-line="35" selection-start-column="130" selection-end-line="35" selection-end-column="130" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="653">
-              <caret line="67" column="25" lean-forward="false" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
+            <state relative-caret-position="98">
+              <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -80,8 +73,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="870">
-              <caret line="1461" column="10" lean-forward="false" selection-start-line="1461" selection-start-column="10" selection-end-line="1461" selection-end-column="10" />
+            <state relative-caret-position="839">
+              <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -122,8 +115,6 @@
         <option value="$PROJECT_DIR$/../../WFG/nwesletters/elhedonista_20170120.htm" />
         <option value="$PROJECT_DIR$/www/controllers/home.js" />
         <option value="$PROJECT_DIR$/www/templates/puzzle-2.html" />
-        <option value="$PROJECT_DIR$/www/templates/home.html" />
-        <option value="$PROJECT_DIR$/www/js/app.js" />
         <option value="$PROJECT_DIR$/www/controllers/puzzle.js" />
         <option value="$PROJECT_DIR$/www/templates/puzzle1.html" />
         <option value="$PROJECT_DIR$/www/templates/puzzle3.html" />
@@ -140,8 +131,10 @@
         <option value="$PROJECT_DIR$/www/templates/puzzle14.html" />
         <option value="$PROJECT_DIR$/www/templates/puzzle15.html" />
         <option value="$PROJECT_DIR$/www/templates/puzzle2.html" />
-        <option value="$PROJECT_DIR$/www/css/style.css" />
         <option value="$PROJECT_DIR$/www/index.html" />
+        <option value="$PROJECT_DIR$/www/templates/home.html" />
+        <option value="$PROJECT_DIR$/www/css/style.css" />
+        <option value="$PROJECT_DIR$/www/js/app.js" />
       </list>
     </option>
   </component>
@@ -388,7 +381,7 @@
       <workItem from="1485206938246" duration="751000" />
       <workItem from="1485246916739" duration="12919000" />
       <workItem from="1485333065251" duration="2240000" />
-      <workItem from="1485336001803" duration="13992000" />
+      <workItem from="1485336001803" duration="16325000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'design' of https://github.com/iraklitbz/puzzle into design&#10;&#10;# Conflicts:&#10;#&#9;www/controllers/home.js&#10;">
       <created>1485159725858</created>
@@ -401,7 +394,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100442000" />
+    <option name="totallyTimeSpent" value="102775000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1917" y="22" width="1920" height="1058" extended-state="6" />
@@ -442,13 +435,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/www/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" column="22" lean-forward="false" selection-start-line="39" selection-start-column="22" selection-end-line="39" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/pixi.js" />
     <entry file="file://$PROJECT_DIR$/www/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -742,10 +728,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/css/style.css">
+    <entry file="file://$PROJECT_DIR$/platforms/ios/cordova/node_modules/elementtree/lib/elementtree.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="1461" column="10" lean-forward="false" selection-start-line="1461" selection-start-column="10" selection-end-line="1461" selection-end-column="10" />
+        <state relative-caret-position="312">
+          <caret line="105" column="0" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -758,26 +744,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="593">
-          <caret line="52" column="40" lean-forward="false" selection-start-line="52" selection-start-column="27" selection-end-line="52" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="21" lean-forward="true" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+        <state relative-caret-position="525">
+          <caret line="35" column="130" lean-forward="false" selection-start-line="35" selection-start-column="130" selection-end-line="35" selection-end-column="130" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="653">
-          <caret line="67" column="25" lean-forward="false" selection-start-line="67" selection-start-column="25" selection-end-line="67" selection-end-column="25" />
+        <state relative-caret-position="98">
+          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="839">
+          <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="623">
+          <caret line="56" column="8" lean-forward="false" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="26" />
           <folding />
         </state>
       </provider>
