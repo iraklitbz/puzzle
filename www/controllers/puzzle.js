@@ -1,7 +1,7 @@
 /**
  * Created by iraklitavberidze on 11/1/17.
  */
-function puzzleCtrl ($rootScope, $scope, $state, $stateParams) {
+function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window) {
     var audio = $("#soltarsound")[0],
         secaudio = $("#arrastrarsound")[0],
         thirdaudio = $("#girarsound")[0],
@@ -75,8 +75,6 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams) {
         
         audio.play();
     	testIfWin();
-
-    	return true;
     }
 
     function setTargetElementPosition (target, x, y) {
@@ -140,8 +138,17 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams) {
     function youWin() {
         forthaudio.play();
 
-    	$rootScope.rounds = $rootScope.rounds + 1;
+    	$state.go('puzzle', {
+            'lvl': parseInt($stateParams.lvl) + 1
+        });
+    }
 
-    	$state.go('puzzle' + $rootScope.rounds);
+    /**
+     * Only for debug purpose
+     */
+    $window._youWin = function() {
+        youWin();
+
+        console.log('LVL', $stateParams.lvl);
     }
 }

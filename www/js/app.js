@@ -24,98 +24,18 @@ var app = angular.module('starter', ['ionic'])
 
     .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider
-
-            .state('puzzle1', {
-                name: 'puzzle1',
-                url: '/puzzle1',
-                templateUrl: 'templates/puzzle1.html',
-                controller: 'puzzleCtrl'
-            })
-
-            .state('puzzle2', {
-                name: 'puzzle2',
-                url: '/puzzle2',
-                templateUrl: 'templates/puzzle2.html',
-                controller: 'puzzleCtrl'
-            })
-
-            .state('puzzle3', {
-                name: 'puzzle3',
-                url: '/puzzle3',
-                templateUrl: 'templates/puzzle3.html',
-                controller: 'puzzleCtrl'
-            })
-
-            .state('puzzle4', {
-                name: 'puzzle4',
-                url: '/puzzle4',
-                templateUrl: 'templates/puzzle4.html',
-                controller: 'puzzleCtrl'
-            })
-
-            .state('puzzle5', {
-                name: 'puzzle5',
-                url: '/puzzle5',
-                templateUrl: 'templates/puzzle5.html',
-                controller: 'puzzleCtrl'
-            })
-
-            .state('puzzle6', {
-                name: 'puzzle6',
-                url: '/puzzle6',
-                templateUrl: 'templates/puzzle6.html',
-                controller: 'puzzleCtrl'
-            })
-
-            .state('puzzle7', {
-                name: 'puzzle7',
-                url: '/puzzle7',
-                templateUrl: 'templates/puzzle7.html',
-                controller: 'puzzleCtrl'
-            })
-
-            .state('puzzle8', {
-                name: 'puzzle8',
-                url: '/puzzle8',
-                templateUrl: 'templates/puzzle8.html',
-                controller: 'puzzleCtrl'
-            })
-
-            .state('puzzle9', {
-                name: 'puzzle9',
-                url: '/puzzle9',
-                templateUrl: 'templates/puzzle9.html',
-                controller: 'puzzleCtrl'
-            })
-
-            .state('puzzle10', {
-                name: 'puzzle10',
-                url: '/puzzle10',
-                templateUrl: 'templates/puzzle10.html',
-                controller: 'puzzleCtrl'
-            })
-
-            .state('puzzle11', {
-                name: 'puzzle11',
-                url: '/puzzle11',
-                templateUrl: 'templates/puzzle11.html',
-                controller: 'puzzleCtrl'
-            })
-
-            .state('puzzle12', {
-                name: 'puzzle12',
-                url: '/puzzle12',
-                templateUrl: 'templates/puzzle12.html',
+            .state('puzzle', {
+                url: '/puzzle/:lvl',
+                templateUrl: function ($stateParams) {
+                    return 'templates/puzzle' + $stateParams.lvl + '.html'
+                },
                 controller: 'puzzleCtrl'
             });
 
-
-
-
-        $urlRouterProvider.otherwise('/puzzle1');
+        $urlRouterProvider.otherwise('/puzzle/1');
     });
 
 app.controller('commonCtrl', ['$rootScope', '$scope', function ($rootScope, $scope) {
     $rootScope.rounds = 0;
 }]);
-app.controller('puzzleCtrl', ['$rootScope', '$scope', '$state', '$stateParams', puzzleCtrl]);
+app.controller('puzzleCtrl', ['$rootScope', '$scope', '$state', '$stateParams', '$window', puzzleCtrl]);
