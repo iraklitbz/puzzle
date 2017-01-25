@@ -2,6 +2,77 @@
 body {
     background-color: #f3f3f3;
 }
+
+/*Nav MENU*/
+.logobk {
+    display: block;
+    width: 80%;
+    height: 80%;
+    background-image: url("../img/whitelogo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.footer {
+    display: flex;
+    align-items: center;
+}
+
+.ion-arrow-left-a {
+    font-size: 2.4em;
+    width: 30px;
+    height: 30px;
+    color: #c53f42;
+    position: absolute;
+    left: 50%;
+    margin-left: -15px;
+}
+
+.nav-menu {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: flex-start;
+    padding: 0 15px 0 15px;
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    height: 100%;
+
+}
+
+.nav-menu .col {
+    display: flex;
+    height: 80px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    margin-right: 15px;
+    border: 5px solid #3f3b3a;
+}
+
+.nav-menu .col i{
+ font-size: 2em;
+    color: #3f3b3a;
+}
+
+.nav-menu .col:last-child {
+    margin-right: 0px;
+}
+
+.nav-menu  .locked {
+    background-color: #fff!important;
+}
+
+.bkgreen {
+    background-color: #168c80;
+    color: #fff;
+    text-decoration: none;
+}
+
+
+/*LEVELS*/
 .box-scene {
     -webkit-perspective: 700;
     width: 100%;
@@ -211,26 +282,12 @@ body {
     top: -60px;
 }
 
-
-
-.levels {
-    display: flex;
+.back-menu {
     width: 100%;
     height: 100%;
-    padding: 0 10px;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: nowrap;
+    justify-content: center;
     align-items: center;
-    position: absolute;
-}
-.lvl{
-    width: 10px;
-    height: 10px;
-    background-color: #3f3b3a;
-    border-radius: 50%;
-    position: relative;
-    z-index: 10;
+
 }
 
 #brick-7  {

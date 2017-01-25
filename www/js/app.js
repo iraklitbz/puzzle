@@ -24,6 +24,11 @@ var app = angular.module('starter', ['ionic'])
 
     .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider
+            .state('home', {
+                url: '/home',
+                templateUrl: 'templates/home.html'
+            })
+
             .state('puzzle', {
                 url: '/puzzle/:lvl',
                 templateUrl: function ($stateParams) {
@@ -32,7 +37,7 @@ var app = angular.module('starter', ['ionic'])
                 controller: 'puzzleCtrl'
             });
 
-        $urlRouterProvider.otherwise('/puzzle/1');
+        $urlRouterProvider.otherwise('/home');
     });
 
 app.controller('commonCtrl', ['$rootScope', '$scope', function ($rootScope, $scope) {
