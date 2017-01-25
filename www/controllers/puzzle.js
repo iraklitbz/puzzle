@@ -16,7 +16,6 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window) {
 
 
     $scope.rotateBox = function (string, $event) {
-        console.log($event);
         if ($event.target.className === 'box-scene disable-user-behavior') {
             thirdaudio.play();
             $scope.rotation = $scope.rotation === -180 ? 0 : -180;

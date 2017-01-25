@@ -4,6 +4,9 @@ body {
 }
 
 /*Nav MENU*/
+.bar.bar-balanced {
+    border-color: transparent;
+}
 .home .bar-footer{
     display: none;
 }
