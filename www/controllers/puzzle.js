@@ -1,7 +1,9 @@
 /**
  * Created by iraklitavberidze on 11/1/17.
  */
-function puzzleCtrl ($rootScope, $scope, $state, $stateParams) {
+function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window) {
+    $rootScope.defaultClass = 'puzzle';
+
     var audio = $("#soltarsound")[0],
         secaudio = $("#arrastrarsound")[0],
         thirdaudio = $("#girarsound")[0],
@@ -11,12 +13,21 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams) {
 
     $scope.rotation = 0;
 
-    $scope.rotateBox = function (string) {
-        thirdaudio.play();
-        $scope.rotation = $scope.rotation === -180 ? 0 : -180;
 
-        $('.' + string).css('transform', 'rotateY(' + $scope.rotation + 'deg)');
-        $('.front, .back').toggleClass('inback');
+
+    $scope.rotateBox = function (string, $event) {
+        if ($event.target.className === 'box-scene disable-user-behavior') {
+            if (thirdaudio.paused) {
+                thirdaudio.play();
+                thirdaudio.volume = 0.3;
+            }else{
+                thirdaudio.currentTime = 0
+            }
+            $scope.rotation = $scope.rotation === -180 ? 0 : -180;
+
+            $('.' + string).css('transform', 'rotateY(' + $scope.rotation + 'deg)');
+            $('.front, .back').toggleClass('inback');
+        }
     };
 
     interact('.draggable')
@@ -34,11 +45,11 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams) {
         .on('dragend', restrictContainer);
 
     function getInitialPosition (event) {
-    	var target = event.target
+        var target = event.target,
     		x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
     		y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
 
-    	_initialX = x;
+        _initialX = x;
     	_initialY = y;
     }
 
@@ -67,16 +78,24 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams) {
     		|| (y + h) > 240
     	) {
 			setTargetElementPosition(target, _initialX, _initialY);
-            
-            secaudio.play();
+
+            if (secaudio.paused) {
+                secaudio.play();
+                secaudio.volume = 0.3;
+            }else{
+                secaudio.currentTime = 0
+            }
     		
             return false;
     	}
-        
-        audio.play();
-    	testIfWin();
 
-    	return true;
+        if (audio.paused) {
+            audio.play();
+            audio.volume = 0.3;
+        }else{
+            audio.currentTime = 0
+        }
+    	testIfWin();
     }
 
     function setTargetElementPosition (target, x, y) {
@@ -138,10 +157,24 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams) {
     }
 
     function youWin() {
-        forthaudio.play();
+        if (forthaudio.paused) {
+            forthaudio.play();
+            forthaudio.volume = 0.3;
+        }else{
+            forthaudio.currentTime = 0
+        }
 
-    	$rootScope.rounds = $rootScope.rounds + 1;
+    	$state.go('puzzle', {
+            'lvl': parseInt($stateParams.lvl) + 1
+        });
+    }
 
-    	$state.go('puzzle' + $rootScope.rounds);
+    /**
+     * Only for debug purpose
+     */
+    $window._youWin = function() {
+        youWin();
+
+        console.log('LVL', $stateParams.lvl);
     }
 }

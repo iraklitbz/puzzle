@@ -30,16 +30,15 @@
   <script src="cordova.js"></script>
 
   <!-- your app's js -->
-  <script
-          src="https://code.jquery.com/jquery-3.1.1.min.js"
-          integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-          crossorigin="anonymous"></script>
+  <script src="js/jquery.js"></script>
   <script src="controllers/puzzle.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/jquery-ui.min.js"></script>
     <script src="js/interact.js"></script>
 </head>
 
-<body ng-app="starter">
+<body ng-app="starter" class="{{ defaultClass }}">
+<div class="sounds">
 <audio autoplay="" controls="" loop="" preload="" id="maintheam">
   <source src="mp3/main.mp3"></source>
 </audio>
@@ -58,30 +57,25 @@
   <source src="mp3/done.mp3"></source>
 </audio>
 
+  <audio id="selectsound">
+    <source src="mp3/seleccionar.mp3"></source>
+  </audio>
+
+  <audio id="volversound">
+    <source src="mp3/seleccionar.mp3"></source>
+  </audio>
+
+  <audio id="denegadosound">
+    <source src="mp3/nein.mp3"></source>
+  </audio>
+</div>
 <div class="bar bar-header">
   <h1 class="title"></h1>
 </div>
 <ui-view ng-controller="commonCtrl"></ui-view>
 <div class="bar bar-footer bar-balanced">
-  <div class="footer">
-    <div class="levels">
-    <div class="lvl circle1"></div>
-    <div class="lvl"></div>
-    <div class="lvl"></div>
-    <div class="lvl"></div>
-    <div class="lvl"></div>
-    <div class="lvl"></div>
-    <div class="lvl"></div>
-    <div class="lvl"></div>
-    <div class="lvl"></div>
-    <div class="lvl"></div>
-    <div class="lvl"></div>
-    <div class="lvl"></div>
-    <div class="lvl"></div>
-    <div class="lvl"></div>
-    <div class="lvl"></div>
-    </div>
-
+  <div class="footer" ng-controller="footerCtrl">
+    <a ng-click="back()" class="icon ion-arrow-left-a" href="#/home"></a>
   </div>
 </div>
 </body>

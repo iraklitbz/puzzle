@@ -24,55 +24,64 @@ var app = angular.module('starter', ['ionic'])
 
     .config(function ($stateProvider, $urlRouterProvider) {
         $stateProvider
-
-            .state('puzzle1', {
-                name: 'puzzle1',
-                url: '/puzzle1',
-                templateUrl: 'templates/puzzle1.html',
-                controller: 'puzzleCtrl'
+            .state('home', {
+                name: 'home',
+                url: '/home',
+                templateUrl: 'templates/home.html',
+                controller: 'homeCtrl'
             })
 
-            .state('puzzle2', {
-                name: 'puzzle2',
-                url: '/puzzle2',
-                templateUrl: 'templates/puzzle2.html',
-                controller: 'puzzleCtrl'
-            })
-
-            .state('puzzle3', {
-                name: 'puzzle3',
-                url: '/puzzle3',
-                templateUrl: 'templates/puzzle3.html',
-                controller: 'puzzleCtrl'
-            })
-
-            .state('puzzle4', {
-                name: 'puzzle4',
-                url: '/puzzle4',
-                templateUrl: 'templates/puzzle4.html',
-                controller: 'puzzleCtrl'
-            })
-
-            .state('puzzle5', {
-                name: 'puzzle5',
-                url: '/puzzle5',
-                templateUrl: 'templates/puzzle5.html',
-                controller: 'puzzleCtrl'
-            })
-
-            .state('puzzle6', {
-                name: 'puzzle6',
-                url: '/puzzle6',
-                templateUrl: 'templates/puzzle6.html',
+            .state('puzzle', {
+                name: 'puzzle',
+                url: '/puzzle/:lvl',
+                templateUrl: function ($stateParams) {
+                    return 'templates/puzzle' + $stateParams.lvl + '.html'
+                },
                 controller: 'puzzleCtrl'
             });
 
-
-
-        $urlRouterProvider.otherwise('/puzzle1');
+        $urlRouterProvider.otherwise('/home');
     });
 
-app.controller('commonCtrl', ['$rootScope', '$scope', function ($rootScope, $scope) {
+app.controller('commonCtrl', ['$rootScope', '$scope', '$state', '$stateParams', function ($rootScope, $scope, $state, $stateParams) {
     $rootScope.rounds = 0;
+    $rootScope.defaultClass = 'home';
 }]);
-app.controller('puzzleCtrl', ['$rootScope', '$scope', '$state', '$stateParams', puzzleCtrl]);
+app.controller('homeCtrl', ['$rootScope', function ($rootScope) {
+    $rootScope.defaultClass = 'home';
+    var fifthaudio = $("#selectsound")[0],
+        seventhaudio = $("#denegadosound")[0];
+
+
+    $rootScope.select = function () {
+        if (fifthaudio.paused) {
+            fifthaudio.play();
+            fifthaudio.volume = 0.3;
+        }else{
+            fifthaudio.currentTime = 0
+        }
+    };
+
+    $rootScope.nop = function ($event) {
+        if (seventhaudio.paused) {
+            seventhaudio.play();
+            seventhaudio.volume = 0.5;
+        }else{
+            seventhaudio.currentTime = 0
+        }
+        $($event.currentTarget).effect("shake", {distance:1}, 200);
+    }
+}]);
+app.controller('footerCtrl', ['$rootScope', function ($rootScope) {
+    var sixthaudio = $("#volversound")[0];
+
+    $rootScope.back = function () {
+        if (sixthaudio.paused) {
+            sixthaudio.play();
+            sixthaudio.volume = 0.3;
+        }else{
+            sixthaudio.currentTime = 0
+        }
+    }
+}]);
+app.controller('puzzleCtrl', ['$rootScope', '$scope', '$state', '$stateParams', '$window', puzzleCtrl]);
