@@ -13,12 +13,17 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window) {
 
     $scope.rotation = 0;
 
-    $scope.rotateBox = function (string) {
-        thirdaudio.play();
-        $scope.rotation = $scope.rotation === -180 ? 0 : -180;
 
-        $('.' + string).css('transform', 'rotateY(' + $scope.rotation + 'deg)');
-        $('.front, .back').toggleClass('inback');
+
+    $scope.rotateBox = function (string, $event) {
+        console.log($event);
+        if ($event.target.className === 'box-scene disable-user-behavior') {
+            thirdaudio.play();
+            $scope.rotation = $scope.rotation === -180 ? 0 : -180;
+
+            $('.' + string).css('transform', 'rotateY(' + $scope.rotation + 'deg)');
+            $('.front, .back').toggleClass('inback');
+        }
     };
 
     interact('.draggable')
@@ -36,11 +41,11 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window) {
         .on('dragend', restrictContainer);
 
     function getInitialPosition (event) {
-    	var target = event.target
+        var target = event.target,
     		x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
     		y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
 
-    	_initialX = x;
+        _initialX = x;
     	_initialY = y;
     }
 

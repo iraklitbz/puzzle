@@ -38,7 +38,7 @@
 
 <body ng-app="starter" class="{{ defaultClass }}">
 <div class="sounds">
-<!--<audio autoplay="" controls="" loop="" preload="" id="maintheam">-->
+<audio autoplay="" controls="" loop="" preload="" id="maintheam">
   <source src="mp3/main.mp3"></source>
 </audio>
 <audio id="soltarsound">
@@ -55,14 +55,26 @@
 <audio id="donesound">
   <source src="mp3/done.mp3"></source>
 </audio>
+
+  <audio id="selectsound">
+    <source src="mp3/seleccionar.mp3"></source>
+  </audio>
+
+  <audio id="volversound">
+    <source src="mp3/volver.mp3"></source>
+  </audio>
+
+  <audio id="denegadosound">
+    <source src="mp3/nein.mp3"></source>
+  </audio>
 </div>
 <div class="bar bar-header">
   <h1 class="title"></h1>
 </div>
 <ui-view ng-controller="commonCtrl"></ui-view>
 <div class="bar bar-footer bar-balanced">
-  <div class="footer">
-    <a class="icon ion-arrow-left-a" href="#/home"></a>
+  <div class="footer" ng-controller="footerCtrl">
+    <a ng-click="back()" class="icon ion-arrow-left-a" href="#/home"></a>
   </div>
 </div>
 </body>

@@ -49,5 +49,22 @@ app.controller('commonCtrl', ['$rootScope', '$scope', '$state', '$stateParams', 
 }]);
 app.controller('homeCtrl', ['$rootScope', function ($rootScope) {
     $rootScope.defaultClass = 'home';
+    var fifthaudio = $("#selectsound")[0],
+        seventhaudio = $("#denegadosound")[0];
+
+
+    $rootScope.select = function () {
+        fifthaudio.play();
+    }
+    $rootScope.nop = function () {
+        seventhaudio.play();
+    }
+}]);
+app.controller('footerCtrl', ['$rootScope', function ($rootScope) {
+    var sixthaudio = $("#volversound")[0];
+
+    $rootScope.back = function () {
+        sixthaudio.play();
+    }
 }]);
 app.controller('puzzleCtrl', ['$rootScope', '$scope', '$state', '$stateParams', '$window', puzzleCtrl]);
