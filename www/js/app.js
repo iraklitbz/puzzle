@@ -27,7 +27,8 @@ var app = angular.module('starter', ['ionic'])
             .state('home', {
                 name: 'home',
                 url: '/home',
-                templateUrl: 'templates/home.html'
+                templateUrl: 'templates/home.html',
+                controller: 'homeCtrl'
             })
 
             .state('puzzle', {
@@ -44,8 +45,9 @@ var app = angular.module('starter', ['ionic'])
 
 app.controller('commonCtrl', ['$rootScope', '$scope', '$state', '$stateParams', function ($rootScope, $scope, $state, $stateParams) {
     $rootScope.rounds = 0;
-    $rootScope.defaultClass = 'puzzle';
-
-    console.log($stateParams);
+    $rootScope.defaultClass = 'home';
+}]);
+app.controller('homeCtrl', ['$rootScope', function ($rootScope) {
+    $rootScope.defaultClass = 'home';
 }]);
 app.controller('puzzleCtrl', ['$rootScope', '$scope', '$state', '$stateParams', '$window', puzzleCtrl]);

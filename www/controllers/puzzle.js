@@ -2,6 +2,8 @@
  * Created by iraklitavberidze on 11/1/17.
  */
 function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window) {
+    $rootScope.defaultClass = 'puzzle';
+
     var audio = $("#soltarsound")[0],
         secaudio = $("#arrastrarsound")[0],
         thirdaudio = $("#girarsound")[0],
