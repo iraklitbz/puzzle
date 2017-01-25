@@ -54,11 +54,19 @@ app.controller('homeCtrl', ['$rootScope', function ($rootScope) {
 
 
     $rootScope.select = function () {
-        fifthaudio.play();
+        if (fifthaudio.paused) {
+            fifthaudio.play();
+        }else{
+            fifthaudio.currentTime = 0
+        }
     };
 
     $rootScope.nop = function ($event) {
-        seventhaudio.play();
+        if (seventhaudio.paused) {
+            seventhaudio.play();
+        }else{
+            seventhaudio.currentTime = 0
+        }
         $($event.currentTarget).effect("shake", {distance:1}, 200);
     }
 }]);
@@ -66,7 +74,11 @@ app.controller('footerCtrl', ['$rootScope', function ($rootScope) {
     var sixthaudio = $("#volversound")[0];
 
     $rootScope.back = function () {
-        sixthaudio.play();
+        if (sixthaudio.paused) {
+            sixthaudio.play();
+        }else{
+            sixthaudio.currentTime = 0
+        }
     }
 }]);
 app.controller('puzzleCtrl', ['$rootScope', '$scope', '$state', '$stateParams', '$window', puzzleCtrl]);

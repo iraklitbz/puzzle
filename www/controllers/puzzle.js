@@ -17,7 +17,11 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window) {
 
     $scope.rotateBox = function (string, $event) {
         if ($event.target.className === 'box-scene disable-user-behavior') {
-            thirdaudio.play();
+            if (thirdaudio.paused) {
+                thirdaudio.play();
+            }else{
+                thirdaudio.currentTime = 0
+            }
             $scope.rotation = $scope.rotation === -180 ? 0 : -180;
 
             $('.' + string).css('transform', 'rotateY(' + $scope.rotation + 'deg)');
@@ -73,13 +77,21 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window) {
     		|| (y + h) > 240
     	) {
 			setTargetElementPosition(target, _initialX, _initialY);
-            
-            secaudio.play();
+
+            if (secaudio.paused) {
+                secaudio.play();
+            }else{
+                secaudio.currentTime = 0
+            }
     		
             return false;
     	}
-        
-        audio.play();
+
+        if (audio.paused) {
+            audio.play();
+        }else{
+            audio.currentTime = 0
+        }
     	testIfWin();
     }
 
@@ -142,7 +154,11 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window) {
     }
 
     function youWin() {
-        forthaudio.play();
+        if (forthaudio.paused) {
+            forthaudio.play();
+        }else{
+            forthaudio.currentTime = 0
+        }
 
     	$state.go('puzzle', {
             'lvl': parseInt($stateParams.lvl) + 1
