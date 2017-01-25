@@ -30,27 +30,6 @@ var app = angular.module('starter', ['ionic'])
                     return 'templates/puzzle' + $stateParams.lvl + '.html'
                 },
                 controller: 'puzzleCtrl'
-            })
-
-            .state('puzzle13', {
-                name: 'puzzle13',
-                url: '/puzzle13',
-                templateUrl: 'templates/puzzle13.html',
-                controller: 'puzzleCtrl'
-            })
-
-            .state('puzzle14', {
-                name: 'puzzle14',
-                url: '/puzzle14',
-                templateUrl: 'templates/puzzle14.html',
-                controller: 'puzzleCtrl'
-            })
-
-            .state('puzzle15', {
-                name: 'puzzle15',
-                url: '/puzzle15',
-                templateUrl: 'templates/puzzle15.html',
-                controller: 'puzzleCtrl'
             });
 
         $urlRouterProvider.otherwise('/puzzle/1');
