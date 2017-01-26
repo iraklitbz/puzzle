@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-var app = angular.module('starter', ['ionic'])
+var app = angular.module('starter', ['ionic', 'hmTouchEvents'])
     .run(function($ionicPlatform) {
         $ionicPlatform.ready(function() {
             if(window.cordova && window.cordova.plugins.Keyboard) {
@@ -54,21 +54,11 @@ app.controller('homeCtrl', ['$rootScope', function ($rootScope) {
 
 
     $rootScope.select = function () {
-        if (fifthaudio.paused) {
-            fifthaudio.play();
-            fifthaudio.volume = 0.3;
-        }else{
-            fifthaudio.currentTime = 0
-        }
+        fifthaudio.play();
     };
 
     $rootScope.nop = function ($event) {
-        if (seventhaudio.paused) {
-            seventhaudio.play();
-            seventhaudio.volume = 0.5;
-        }else{
-            seventhaudio.currentTime = 0
-        }
+        seventhaudio.play();
         $($event.currentTarget).effect("shake", {distance:1}, 200);
     }
 }]);
@@ -76,12 +66,7 @@ app.controller('footerCtrl', ['$rootScope', function ($rootScope) {
     var sixthaudio = $("#volversound")[0];
 
     $rootScope.back = function () {
-        if (sixthaudio.paused) {
-            sixthaudio.play();
-            sixthaudio.volume = 0.3;
-        }else{
-            sixthaudio.currentTime = 0
-        }
+        sixthaudio.play();
     }
 }]);
 app.controller('puzzleCtrl', ['$rootScope', '$scope', '$state', '$stateParams', '$window', puzzleCtrl]);

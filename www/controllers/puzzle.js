@@ -18,7 +18,7 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window) {
     maintheam.volume = 0.5;
 
     $scope.rotateBox = function (string, $event) {
-        if ($event.target.className === 'box-scene disable-user-behavior') {
+        if ($event.target.className === 'box-scene') {
             if (thirdaudio.paused) {
                 thirdaudio.play();
                 thirdaudio.volume = 0.3;
