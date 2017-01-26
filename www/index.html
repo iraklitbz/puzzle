@@ -34,19 +34,21 @@
   <script src="controllers/puzzle.js"></script>
   <script src="js/app.js"></script>
   <script src="js/jquery-ui.min.js"></script>
-    <script src="js/interact.js"></script>
+  <script src="js/interact.js"></script>
+  <script src="js/hammer.js"></script>
+  <script src="js/angularHammer.js"></script>
 </head>
 
 <body ng-app="starter" class="{{ defaultClass }}">
 <div class="sounds">
-<audio autoplay="" controls="" loop="" preload="" id="maintheam">
+<audio id="maintheam">
   <source src="mp3/main.mp3"></source>
 </audio>
 <audio id="soltarsound">
-  <source src="mp3/soltar.mp3"></source>
+  <source src="mp3/soltar.m4a"></source>
 </audio>
 <audio id="arrastrarsound">
-  <source src="mp3/arrastrar.mp3"></source>
+  <source src="mp3/arrastrar.m4a"></source>
 </audio>
 
 <audio id="girarsound">
@@ -58,11 +60,11 @@
 </audio>
 
   <audio id="selectsound">
-    <source src="mp3/seleccionar.mp3"></source>
+    <source src="mp3/seleccionar.m4a"></source>
   </audio>
 
   <audio id="volversound">
-    <source src="mp3/seleccionar.mp3"></source>
+    <source src="mp3/seleccionar.m4a"></source>
   </audio>
 
   <audio id="denegadosound">
