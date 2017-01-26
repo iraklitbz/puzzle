@@ -6,6 +6,7 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window) {
 
     var audio = $("#soltarsound")[0],
         secaudio = $("#arrastrarsound")[0],
+        maintheam = $("#maintheam")[0],
         thirdaudio = $("#girarsound")[0],
         forthaudio = $("#donesound")[0],
         _initialX = 0,
@@ -13,7 +14,8 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window) {
 
     $scope.rotation = 0;
 
-
+    maintheam.play();
+    maintheam.volume = 0.5;
 
     $scope.rotateBox = function (string, $event) {
         if ($event.target.className === 'box-scene disable-user-behavior') {
@@ -81,7 +83,7 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window) {
 
             if (secaudio.paused) {
                 secaudio.play();
-                secaudio.volume = 0.3;
+                secaudio.volume = 0.1;
             }else{
                 secaudio.currentTime = 0
             }
