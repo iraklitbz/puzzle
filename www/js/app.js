@@ -46,6 +46,19 @@ var app = angular.module('starter', ['ionic', 'hmTouchEvents'])
 app.controller('commonCtrl', ['$rootScope', '$scope', '$state', '$stateParams', function ($rootScope, $scope, $state, $stateParams) {
     $rootScope.rounds = 0;
     $rootScope.defaultClass = 'home';
+
+    var maintheam = $("#maintheam")[0];
+
+    $rootScope.$watch('defaultClass', function () {
+        if ($rootScope.defaultClass === 'home') {
+            maintheam.pause();
+        }
+
+        else {
+            maintheam.play();
+            maintheam.volume = 0.4;
+        }
+    });
 }]);
 app.controller('homeCtrl', ['$rootScope', function ($rootScope) {
     $rootScope.defaultClass = 'home';
@@ -54,11 +67,21 @@ app.controller('homeCtrl', ['$rootScope', function ($rootScope) {
 
 
     $rootScope.select = function () {
-        fifthaudio.play();
+        if (fifthaudio.paused) {
+            fifthaudio.play();
+            fifthaudio.volume = 0.1;
+        }else{
+            fifthaudio.currentTime = 0
+        }
     };
 
     $rootScope.nop = function ($event) {
-        seventhaudio.play();
+        if (seventhaudio.paused) {
+            seventhaudio.play();
+            seventhaudio.volume = 0.1;
+        }else{
+            seventhaudio.currentTime = 0
+        };
         $($event.currentTarget).effect("shake", {distance:1}, 200);
     }
 }]);
@@ -66,7 +89,12 @@ app.controller('footerCtrl', ['$rootScope', function ($rootScope) {
     var sixthaudio = $("#volversound")[0];
 
     $rootScope.back = function () {
-        sixthaudio.play();
+        if (sixthaudio.paused) {
+            sixthaudio.play();
+            sixthaudio.volume = 0.1;
+        }else{
+            sixthaudio.currentTime = 0
+        }
     }
 }]);
 app.controller('puzzleCtrl', ['$rootScope', '$scope', '$state', '$stateParams', '$window', puzzleCtrl]);

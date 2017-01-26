@@ -6,7 +6,6 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window) {
 
     var audio = $("#soltarsound")[0],
         secaudio = $("#arrastrarsound")[0],
-        maintheam = $("#maintheam")[0],
         thirdaudio = $("#girarsound")[0],
         forthaudio = $("#donesound")[0],
         _initialX = 0,
@@ -14,8 +13,7 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window) {
 
     $scope.rotation = 0;
 
-    maintheam.play();
-    maintheam.volume = 0.5;
+
 
     $scope.rotateBox = function (string, $event) {
         if ($event.target.className === 'box-scene') {
@@ -159,6 +157,7 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window) {
     }
 
     function youWin() {
+
         if (forthaudio.paused) {
             forthaudio.play();
             forthaudio.volume = 0.3;
@@ -177,6 +176,5 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window) {
     $window._youWin = function() {
         youWin();
 
-        console.log('LVL', $stateParams.lvl);
     }
 }
