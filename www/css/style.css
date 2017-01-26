@@ -2,6 +2,8 @@
 @font-face {
     font-family: 'SanFranciscoText-Bold';
     src: url('../font/SanFranciscoText-Bold.eot') format('embedded-opentype');
+    src:  url('../font/SanFranciscoText-Bold.otf')  format('opentype'),
+    url('../font/SanFranciscoText-Bold.ttf')  format('truetype'), url('../font/SanFranciscoText-Bold.svg#SanFranciscoText-Bold') format('svg');
     font-weight: normal;
     font-style: normal;
 }
