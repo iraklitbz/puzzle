@@ -1,7 +1,7 @@
 /**
  * Created by iraklitavberidze on 11/1/17.
  */
-function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window) {
+function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window, $localStorage) {
     $rootScope.defaultClass = 'puzzle';
 
     var audio = $("#soltarsound")[0],
@@ -161,9 +161,14 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window) {
         if (forthaudio.paused) {
             forthaudio.play();
             forthaudio.volume = 0.3;
-        }else{
+        }
+
+        else {
             forthaudio.currentTime = 0
         }
+
+        $rootScope.isLocked[$stateParams.lvl] = true;
+        $rootScope.$apply();
 
     	$state.go('puzzle', {
             'lvl': parseInt($stateParams.lvl) + 1
