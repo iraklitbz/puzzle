@@ -11,6 +11,12 @@ body {
     background-color: #f3f3f3;
 }
 
+.removeScene {
+    position: relative;
+    left: 350px!important;
+    transition: all 0.3s ease-in;
+}
+
 /*Nav MENU*/
 .bar.bar-balanced {
     border-color: transparent;
@@ -147,6 +153,7 @@ body {
     margin-left: -140px;
     margin-top: -140px;
     border: 20px solid #3f3b3a;
+    overflow: hidden;
 }
 .inback  {
     z-index: 1!important;
@@ -160,7 +167,11 @@ body {
     height: 240px;
     display: block;
     position: relative;
+    overflow: hidden;
+    left: 330px;
+    transition: all 0.3s linear;
 }
+
 .middle {
     background-color: transparent;
     position: absolute;
