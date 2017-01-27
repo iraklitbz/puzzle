@@ -163,11 +163,17 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window) {
             forthaudio.volume = 0.3;
         }else{
             forthaudio.currentTime = 0
+
         }
 
-    	$state.go('puzzle', {
-            'lvl': parseInt($stateParams.lvl) + 1
-        });
+        setTimeout(
+            function()
+            {
+                $state.go('puzzle', {
+                    'lvl': parseInt($stateParams.lvl) + 1
+                });
+            }, 300);
+
     }
 
     /**
