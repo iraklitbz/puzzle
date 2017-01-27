@@ -165,7 +165,7 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window) {
             forthaudio.volume = 0.3;
         }else{
             forthaudio.currentTime = 0
-            
+
         }
 
         $('.face').addClass('removeScene');
