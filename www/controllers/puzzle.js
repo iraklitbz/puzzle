@@ -14,8 +14,6 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window) {
     $scope.rotation = 0;
 
 
-    $('.face').animate({left: "0px"}, 150);
-
 
     $scope.rotateBox = function (string, $event) {
         if ($event.target.className === 'box-scene') {
@@ -167,8 +165,6 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window) {
             forthaudio.currentTime = 0
 
         }
-
-        $('.face').addClass('removeScene');
 
         setTimeout(
             function()
