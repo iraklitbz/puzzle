@@ -13,8 +13,6 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window, $localSt
 
     $scope.rotation = 0;
 
-
-
     $scope.rotateBox = function (string, $event) {
         if ($event.target.className === 'box-scene') {
             if (thirdaudio.paused) {
@@ -82,7 +80,9 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window, $localSt
             if (secaudio.paused) {
                 secaudio.play();
                 secaudio.volume = 0.1;
-            }else{
+            }
+
+            else {
                 secaudio.currentTime = 0
             }
     		
@@ -92,7 +92,9 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window, $localSt
         if (audio.paused) {
             audio.play();
             audio.volume = 0.3;
-        }else{
+        }
+
+        else {
             audio.currentTime = 0
         }
     	testIfWin();
@@ -167,7 +169,10 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window, $localSt
             forthaudio.currentTime = 0
         }
 
-        $rootScope.isLocked[$stateParams.lvl] = true;
+        var lvlToUnlock = parseInt($stateParams.lvl) + 1;
+        console.log(lvlToUnlock);
+
+        $rootScope.isLocked[lvlToUnlock] = true;
         $rootScope.$apply();
 
     	$state.go('puzzle', {

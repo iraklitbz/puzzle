@@ -90,7 +90,7 @@ app.controller('commonCtrl', ['$rootScope', '$scope', '$state', '$stateParams', 
     });
 }]);
 
-app.controller('homeCtrl', ['$rootScope', '$scope', '$localStorage', function ($rootScope, $scope, $localStorage) {
+app.controller('homeCtrl', ['$rootScope', '$scope', '$localStorage', '$state', function ($rootScope, $scope, $localStorage, $state) {
     $rootScope.defaultClass = 'home';
     var fifthaudio = $("#selectsound")[0],
         seventhaudio = $("#denegadosound")[0];
@@ -106,16 +106,34 @@ app.controller('homeCtrl', ['$rootScope', '$scope', '$localStorage', function ($
         }
     };
 
-    $scope.nop = function ($event) {
-        if (seventhaudio.paused) {
-            seventhaudio.play();
-            seventhaudio.volume = 0.1;
-        }
-        else {
-            seventhaudio.currentTime = 0
-        };
+    $scope.nop = function ($event, lvl) {
+        if ($rootScope.isLocked[lvl]) {
+            if (fifthaudio.paused) {
+                fifthaudio.play();
+                fifthaudio.volume = 0.1;
+            }
+            
+            else{
+                fifthaudio.currentTime = 0
+            }
 
-        $($event.currentTarget).effect("shake", {distance:1}, 200);
+            $state.go('puzzle', {
+                'lvl': parseInt(lvl) 
+            });
+        }
+
+        else {
+            if (seventhaudio.paused) {
+                seventhaudio.play();
+                seventhaudio.volume = 0.1;
+            }
+
+            else {
+                seventhaudio.currentTime = 0
+            }
+
+            $($event.currentTarget).effect("shake", {distance:1}, 200);
+        }
     }
 }]);
 
@@ -126,7 +144,9 @@ app.controller('footerCtrl', ['$rootScope', function ($rootScope) {
         if (sixthaudio.paused) {
             sixthaudio.play();
             sixthaudio.volume = 0.1;
-        }else{
+        }
+
+        else{
             sixthaudio.currentTime = 0
         }
     }
