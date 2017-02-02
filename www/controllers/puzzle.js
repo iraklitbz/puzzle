@@ -167,8 +167,9 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window, $localSt
 
         else {
             forthaudio.currentTime = 0
-        }
 
+        }
+        
         var lvlToUnlock = parseInt($stateParams.lvl) + 1;
 
         $rootScope.isLocked[lvlToUnlock] = true;
