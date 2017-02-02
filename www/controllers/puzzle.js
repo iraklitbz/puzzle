@@ -97,6 +97,7 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window, $localSt
         else {
             audio.currentTime = 0
         }
+        
     	testIfWin();
     }
 
@@ -159,7 +160,6 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window, $localSt
     }
 
     function youWin() {
-
         if (forthaudio.paused) {
             forthaudio.play();
             forthaudio.volume = 0.3;
@@ -170,13 +170,12 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window, $localSt
         }
 
         var lvlToUnlock = parseInt($stateParams.lvl) + 1;
-        console.log(lvlToUnlock);
 
         $rootScope.isLocked[lvlToUnlock] = true;
         $rootScope.$apply();
 
     	$state.go('puzzle', {
-            'lvl': parseInt($stateParams.lvl) + 1
+            'lvl': lvlToUnlock
         });
     }
 
