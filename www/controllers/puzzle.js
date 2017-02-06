@@ -18,9 +18,12 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window, $localSt
             if (thirdaudio.paused) {
                 thirdaudio.play();
                 thirdaudio.volume = 0.3;
-            }else{
+            }
+
+            else {
                 thirdaudio.currentTime = 0
             }
+            
             $scope.rotation = $scope.rotation === -180 ? 0 : -180;
 
             $('.' + string).css('transform', 'rotateY(' + $scope.rotation + 'deg)');
@@ -183,7 +186,7 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window, $localSt
     /**
      * Only for debug purpose
      */
-    $window._youWin = function() {
+    $window.youWin = function() {
         youWin();
 
     }

@@ -37,7 +37,8 @@ var app = angular.module('starter', ['ionic', 'hmTouchEvents', 'ngStorage'])
                 templateUrl: function ($stateParams) {
                     return 'templates/puzzle' + $stateParams.lvl + '.html'
                 },
-                controller: 'puzzleCtrl'
+                controller: 'puzzleCtrl',
+                cache: false
             });
 
         $urlRouterProvider.otherwise('/home');
