@@ -1,41 +1,35 @@
 <ion-content>
+
 <div class="nav-menu">
     <div class="row">
-       <div class="col"> <a ng-click="select()" href="#/puzzle/1" class="bkgreen"><i>1</i></a></div>
-        <div class="col"> <a ng-click="select()" href="#/puzzle/2" class="bkred"><i>2</i></a></div>
-        <div class="col"><a ng-click="nop($event)" class="bkblue locked"><i class="icon ion-locked "></i> </a></div>
-
-
+        <div is-locked class="col"><a ng-click="nop($event, 1)" class="bkgreen" ng-class="isLocked[1] ? '' : 'locked'"><i ng-if="!isLocked[1]" class="icon ion-locked"></i><i ng-if="isLocked[1]">1</i></a></div>
+        <div is-locked class="col"><a ng-click="nop($event, 2)" class="bkred" ng-class="isLocked[2] ? '' : 'locked'"><i ng-if="!isLocked[2]" class="icon ion-locked"></i><i ng-if="isLocked[2]">2</i></a></div>
+        <div is-locked class="col"><a ng-click="nop($event, 3)" class="bkblue" ng-class="isLocked[3] ? '' : 'locked'"><i ng-if="!isLocked[3]" class="icon ion-locked"></i><i ng-if="isLocked[3]">3</i></a></div>
     </div>
 
     <div class="row">
-        <div class="col"> <a ng-click="nop($event)" class="col bkyellow locked"><i class="icon ion-locked "></i> </a></div>
-            <div class="col"><a ng-click="nop($event)" class="col bkpurple locked"><i class="icon ion-locked "></i> </a></div>
-                <div class="col"><a ng-click="nop($event)" class="col bkgreen locked"><i class="icon ion-locked "></i> </a></div>
-
-
+        <div is-locked class="col"><a ng-click="nop($event, 4)" class="col bkyellow" ng-class="isLocked[4] ? '' : 'locked'"><i ng-if="!isLocked[4]" class="icon ion-locked"></i><i ng-if="isLocked[4]">4</i></a></div>
+        <div is-locked class="col"><a ng-click="nop($event, 5)" class="col bkpurple" ng-class="isLocked[5] ? '' : 'locked'"><i ng-if="!isLocked[5]" class="icon ion-locked"></i><i ng-if="isLocked[5]">5</i></a></div>
+        <div is-locked class="col"><a ng-click="nop($event, 6)" class="col bkgreen" ng-class="isLocked[6] ? '' : 'locked'"><i ng-if="!isLocked[6]" class="icon ion-locked"></i><i ng-if="isLocked[6]">6</i></a></div>
     </div>
 
     <div class="row">
-        <div class="col"> <a ng-click="nop($event)" class="col bkred locked"><i class="icon ion-locked "></i> </a></div>
-            <div class="col"> <a ng-click="nop($event)" class="col bkblue locked"><i class="icon ion-locked "></i> </a></div>
-                <div class="col"> <a ng-click="nop($event)" class="col bkyellow locked"><i class="icon ion-locked "></i> </a></div>
-
-
+        <div is-locked class="col"><a ng-click="nop($event, 7)" class="col bkred" ng-class="isLocked[7] ? '' : 'locked'"><i ng-if="!isLocked[7]" class="icon ion-locked"></i><i ng-if="isLocked[7]">7</i></a></div>
+        <div is-locked class="col"><a ng-click="nop($event, 8)" class="col bkblue" ng-class="isLocked[8] ? '' : 'locked'"><i ng-if="!isLocked[8]" class="icon ion-locked"></i><i ng-if="isLocked[8]">8</i></a></div>
+        <div is-locked class="col"><a ng-click="nop($event, 9)" class="col bkyellow" ng-class="isLocked[9] ? '' : 'locked'"><i ng-if="!isLocked[9]" class="icon ion-locked"></i><i ng-if="isLocked[9]">9</i></a></div>
     </div>
 
     <div class="row">
-        <div class="col">   <a ng-click="nop($event)" class="col bkpurple locked"><i class="icon ion-locked "></i> </a></div>
-            <div class="col"> <a ng-click="nop($event)" class="col bkgreen locked"><i class="icon ion-locked "></i> </a></div>
-                <div class="col"> <a ng-click="nop($event)" class="col bkred locked"><i class="icon ion-locked "></i> </a></div>
+        <div is-locked class="col"><a ng-click="nop($event, 10)" class="col bkpurple" ng-class="isLocked[10] ? '' : 'locked'"><i ng-if="!isLocked[10]" class="icon ion-locked"></i><i ng-if="isLocked[10]">10</i></a></div>
+        <div is-locked class="col"><a ng-click="nop($event, 11)" class="col bkgreen" ng-class="isLocked[11] ? '' : 'locked'"><i ng-if="!isLocked[11]" class="icon ion-locked"></i><i ng-if="isLocked[11]">11</i></a></div>
+        <div is-locked class="col"><a ng-click="nop($event, 12)" class="col bkred" ng-class="isLocked[12] ? '' : 'locked'"><i ng-if="!isLocked[12]" class="icon ion-locked"></i><i ng-if="isLocked[12]">12</i></a></div>
     </div>
 
     <div class="row">
-        <div class="col"> <a ng-click="nop($event)" class="col bkblue locked"><i class="icon ion-locked "></i> </a></div>
-            <div class="col"> <a ng-click="nop($event)" class="col bkyellow locked"><i class="icon ion-locked "></i> </a></div>
-                <div class="col"><a ng-click="nop($event)" class="col bkpurple locked"><i class="icon ion-locked "></i> </a></div>
+        <div is-locked class="col"><a ng-click="nop($event, 13)" class="col bkblue" ng-class="isLocked[13] ? '' : 'locked'"><i ng-if="!isLocked[13]" class="icon ion-locked"></i><i ng-if="isLocked[13]">13</i></a></div>
+        <div is-locked class="col"><a ng-click="nop($event, 14)" class="col bkyellow" ng-class="isLocked[14] ? '' : 'locked'"><i ng-if="!isLocked[14]" class="icon ion-locked"></i><i ng-if="isLocked[14]">14</i></a></div>
+        <div is-locked class="col"><a ng-click="nop($event, 15)" class="col bkpurple" ng-class="isLocked[15] ? '' : 'locked'"><i ng-if="!isLocked[15]" class="icon ion-locked"></i><i ng-if="isLocked[15]">15</i></a></div>
     </div>
-
 </div>
 
 </ion-content>

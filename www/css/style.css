@@ -11,6 +11,80 @@ body {
     background-color: #f3f3f3;
 }
 
+/*How to play*/
+
+
+
+.howto {
+    width: 240px;
+    margin: 0px auto;
+    height: 240px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.tut1 {
+    background-image: url("../img/how/1.png");
+}
+
+.tut2 {
+    background-image: url("../img/how/2.png");
+    background-position: center;
+}
+
+.tut3 {
+    background-image: url("../img/how/3.png");
+}
+
+.tut4 {
+    background-image: url("../img/how/4.png");
+}
+
+.carrusel .btn{
+   display: block;
+    text-align: center;
+    width: 170px;
+    margin: 0 auto;
+    border-radius: 4px;
+    padding: 15px;
+    background-color:#30a89b ;
+    color: #fff;
+    text-decoration: none;
+    font-size: 25px;
+    font-family: 'SanFranciscoText-Bold';
+}
+.slider-pager .slider-pager-page{
+   color:#ed4436 ;
+}
+.carrusel h2{
+  text-align: center;
+    font-size: 18px;
+    font-family: 'SanFranciscoText-Bold';
+    padding: 15px;
+}
+
+.carrusel h2 span{
+    color: #28a79b;
+}
+
+.howto img {
+    width: 100%;
+}
+
+.carrusel .slideshow {
+   width: 100%;
+    height: 100%;
+    position: relative;
+    top: 90px;
+    padding-bottom: 140px;
+}
+.carrusel  {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
 
 /*Nav MENU*/
 .bar.bar-balanced {
@@ -197,6 +271,7 @@ body {
     margin-top: -140px;
     border: 20px solid #3f3b3a;
     overflow: hidden;
+    outline: 4px solid #fff;
 }
 .inback  {
     z-index: 1!important;
@@ -265,7 +340,7 @@ body {
 }
 
 .footer a {
-    color: #2196f3
+    color: #f44336
 }
 
 .swipArea h2 {

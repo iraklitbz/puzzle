@@ -1,7 +1,7 @@
 /**
  * Created by iraklitavberidze on 11/1/17.
  */
-function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window) {
+function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window, $localStorage) {
     $rootScope.defaultClass = 'puzzle';
 
     var audio = $("#soltarsound")[0],
@@ -13,16 +13,17 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window) {
 
     $scope.rotation = 0;
 
-
-
     $scope.rotateBox = function (string, $event) {
         if ($event.target.className === 'box-scene') {
             if (thirdaudio.paused) {
                 thirdaudio.play();
                 thirdaudio.volume = 0.3;
-            }else{
+            }
+
+            else {
                 thirdaudio.currentTime = 0
             }
+            
             $scope.rotation = $scope.rotation === -180 ? 0 : -180;
 
             $('.' + string).css('transform', 'rotateY(' + $scope.rotation + 'deg)');
@@ -82,7 +83,9 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window) {
             if (secaudio.paused) {
                 secaudio.play();
                 secaudio.volume = 0.1;
-            }else{
+            }
+
+            else {
                 secaudio.currentTime = 0
             }
     		
@@ -92,9 +95,12 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window) {
         if (audio.paused) {
             audio.play();
             audio.volume = 0.3;
-        }else{
+        }
+
+        else {
             audio.currentTime = 0
         }
+        
     	testIfWin();
     }
 
@@ -157,29 +163,30 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window) {
     }
 
     function youWin() {
-
         if (forthaudio.paused) {
             forthaudio.play();
             forthaudio.volume = 0.3;
-        }else{
+        }
+
+        else {
             forthaudio.currentTime = 0
 
         }
+        
+        var lvlToUnlock = parseInt($stateParams.lvl) + 1;
 
-        setTimeout(
-            function()
-            {
-                $state.go('puzzle', {
-                    'lvl': parseInt($stateParams.lvl) + 1
-                });
-            }, 300);
+        $rootScope.isLocked[lvlToUnlock] = true;
+        $rootScope.$apply();
 
+    	$state.go('puzzle', {
+            'lvl': lvlToUnlock
+        });
     }
 
     /**
      * Only for debug purpose
      */
-    $window._youWin = function() {
+    $window.youWin = function() {
         youWin();
 
     }

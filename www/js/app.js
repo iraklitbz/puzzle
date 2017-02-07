@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-var app = angular.module('starter', ['ionic', 'hmTouchEvents'])
+var app = angular.module('starter', ['ionic', 'hmTouchEvents', 'ngStorage'])
     .run(function($ionicPlatform) {
         $ionicPlatform.ready(function() {
             if(window.cordova && window.cordova.plugins.Keyboard) {
@@ -37,15 +37,54 @@ var app = angular.module('starter', ['ionic', 'hmTouchEvents'])
                 templateUrl: function ($stateParams) {
                     return 'templates/puzzle' + $stateParams.lvl + '.html'
                 },
-                controller: 'puzzleCtrl'
+                controller: 'puzzleCtrl',
+                cache: false
+            })
+            .state('how', {
+                name: 'how',
+                url: '/how',
+                templateUrl: 'templates/howtoplay.html',
+                controller: 'howCtrl'
             });
 
-        $urlRouterProvider.otherwise('/home');
+
+
+        $urlRouterProvider.otherwise('/how');
     });
 
-app.controller('commonCtrl', ['$rootScope', '$scope', '$state', '$stateParams', function ($rootScope, $scope, $state, $stateParams) {
+app.directive('isLocked', ['$rootScope', '$localStorage', function ($rootScope, $localStorage) {
+    return {
+        restrict: 'A',
+        link: function (scope, element, attrs) {
+            $rootScope.isLocked = $localStorage.LVL;
+        }
+    }
+}]);
+
+app.controller('commonCtrl', ['$rootScope', '$scope', '$state', '$stateParams', '$localStorage', function ($rootScope, $scope, $state, $stateParams, $localStorage) {
     $rootScope.rounds = 0;
     $rootScope.defaultClass = 'home';
+    $rootScope.isLocked = {};
+    $localStorage.$default({
+        LVL: {
+            1: true,
+            2: false,
+            3: false,
+            4: false,
+            5: false,
+            6: false,
+            7: false,
+            8: false,
+            9: false,
+            10: false,
+            11: false,
+            12: false,
+            13: false,
+            14: false,
+            15: false
+        },
+        tutorial: true
+    });
 
     var maintheam = $("#maintheam")[0];
 
@@ -60,31 +99,56 @@ app.controller('commonCtrl', ['$rootScope', '$scope', '$state', '$stateParams', 
         }
     });
 }]);
-app.controller('homeCtrl', ['$rootScope', function ($rootScope) {
+
+app.controller('homeCtrl', ['$rootScope', '$scope', '$localStorage', '$state', function ($rootScope, $scope, $localStorage, $state) {
+
+    $localStorage.tutorial = false;
     $rootScope.defaultClass = 'home';
     var fifthaudio = $("#selectsound")[0],
         seventhaudio = $("#denegadosound")[0];
 
 
-    $rootScope.select = function () {
+    $scope.select = function () {
         if (fifthaudio.paused) {
             fifthaudio.play();
             fifthaudio.volume = 0.1;
-        }else{
+        }
+        else{
             fifthaudio.currentTime = 0
         }
     };
 
-    $rootScope.nop = function ($event) {
-        if (seventhaudio.paused) {
-            seventhaudio.play();
-            seventhaudio.volume = 0.1;
-        }else{
-            seventhaudio.currentTime = 0
-        };
-        $($event.currentTarget).effect("shake", {distance:1}, 200);
+    $scope.nop = function ($event, lvl) {
+        if ($rootScope.isLocked[lvl]) {
+            if (fifthaudio.paused) {
+                fifthaudio.play();
+                fifthaudio.volume = 0.1;
+            }
+            
+            else{
+                fifthaudio.currentTime = 0
+            }
+
+            $state.go('puzzle', {
+                'lvl': parseInt(lvl) 
+            });
+        }
+
+        else {
+            if (seventhaudio.paused) {
+                seventhaudio.play();
+                seventhaudio.volume = 0.1;
+            }
+
+            else {
+                seventhaudio.currentTime = 0
+            }
+
+            $($event.currentTarget).effect("shake", {distance:1}, 200);
+        }
     }
 }]);
+
 app.controller('footerCtrl', ['$rootScope', function ($rootScope) {
     var sixthaudio = $("#volversound")[0];
 
@@ -92,9 +156,18 @@ app.controller('footerCtrl', ['$rootScope', function ($rootScope) {
         if (sixthaudio.paused) {
             sixthaudio.play();
             sixthaudio.volume = 0.1;
-        }else{
+        }
+
+        else{
             sixthaudio.currentTime = 0
         }
     }
 }]);
-app.controller('puzzleCtrl', ['$rootScope', '$scope', '$state', '$stateParams', '$window', puzzleCtrl]);
+
+app.controller('howCtrl', ['$rootScope', '$localStorage', '$state', function ($rootScope, $localStorage, $state) {
+    if (!$localStorage.tutorial) {
+        $state.go('home');
+    }
+}]);
+
+app.controller('puzzleCtrl', ['$rootScope', '$scope', '$state', '$stateParams', '$window', '$localStorage', puzzleCtrl]);
