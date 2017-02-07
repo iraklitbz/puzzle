@@ -39,9 +39,17 @@ var app = angular.module('starter', ['ionic', 'hmTouchEvents', 'ngStorage'])
                 },
                 controller: 'puzzleCtrl',
                 cache: false
+            })
+            .state('how', {
+                name: 'how',
+                url: '/how',
+                templateUrl: 'templates/howtoplay.html',
+                controller: 'howCtrl'
             });
 
-        $urlRouterProvider.otherwise('/home');
+
+
+        $urlRouterProvider.otherwise('/how');
     });
 
 app.directive('isLocked', ['$rootScope', '$localStorage', function ($rootScope, $localStorage) {
@@ -74,7 +82,8 @@ app.controller('commonCtrl', ['$rootScope', '$scope', '$state', '$stateParams', 
             13: false,
             14: false,
             15: false
-        }
+        },
+        tutorial: true
     });
 
     var maintheam = $("#maintheam")[0];
@@ -92,6 +101,8 @@ app.controller('commonCtrl', ['$rootScope', '$scope', '$state', '$stateParams', 
 }]);
 
 app.controller('homeCtrl', ['$rootScope', '$scope', '$localStorage', '$state', function ($rootScope, $scope, $localStorage, $state) {
+
+    $localStorage.tutorial = false;
     $rootScope.defaultClass = 'home';
     var fifthaudio = $("#selectsound")[0],
         seventhaudio = $("#denegadosound")[0];
@@ -150,6 +161,12 @@ app.controller('footerCtrl', ['$rootScope', function ($rootScope) {
         else{
             sixthaudio.currentTime = 0
         }
+    }
+}]);
+
+app.controller('howCtrl', ['$rootScope', '$localStorage', '$state', function ($rootScope, $localStorage, $state) {
+    if (!$localStorage.tutorial) {
+        $state.go('home');
     }
 }]);
 
