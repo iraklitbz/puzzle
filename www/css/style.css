@@ -18,6 +18,26 @@ body {
 .howto {
     width: 240px;
     margin: 0px auto;
+    height: 240px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.tut1 {
+    background-image: url("../img/how/1.png");
+}
+
+.tut2 {
+    background-image: url("../img/how/2.png");
+    background-position: center;
+}
+
+.tut3 {
+    background-image: url("../img/how/3.png");
+}
+
+.tut4 {
+    background-image: url("../img/how/4.png");
 }
 
 .carrusel .btn{
@@ -56,7 +76,7 @@ body {
     height: 100%;
     position: relative;
     top: 90px;
-    padding-bottom: 130px;
+    padding-bottom: 140px;
 }
 .carrusel  {
     width: 100%;
