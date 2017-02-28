@@ -192,7 +192,6 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window, $localSt
 
       }, 850);
 
-
     }
 
     /**
