@@ -31,11 +31,9 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window, $localSt
         }
     };
 
- $scope.moveee = function () {
+    $scope.moveee = function () {
        $('.draggable').on('dragstart', getInitialPosition).on('dragend', restrictContainer);
-            }
-
-
+    };
 
     interact('.draggable')
     	.draggable({
@@ -169,7 +167,7 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window, $localSt
     }
 
     function youWin() {
-        $('.square').css({backgroundColor: ':#168c80!important'}, 800);
+
         if (forthaudio.paused) {
             forthaudio.play();
             forthaudio.volume = 0.3;
@@ -181,8 +179,9 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window, $localSt
         }
 
         var lvlToUnlock = parseInt($stateParams.lvl) + 1;
+        $('.square').css({backgroundColor: $localStorage.colorLevel[lvlToUnlock-1]+'!important'}, 800);
 
-        $rootScope.isLocked[lvlToUnlock] = true;
+        $localStorage.LVL[lvlToUnlock] = true;
         $rootScope.$apply();
 
 

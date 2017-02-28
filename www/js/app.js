@@ -81,6 +81,23 @@ app.controller('commonCtrl', ['$rootScope', '$scope', '$state', '$stateParams', 
             14: false,
             15: false
         },
+        colorLevel: {
+            1: '#168c80',
+            2: '#f44336',
+            3: '#03a9f4',
+            4: '#ffb300',
+            5: '#d500f9',
+            6: '#168c80',
+            7: '#f44336',
+            8: '#03a9f4',
+            9: '#ffb300',
+            10: '#d500f9',
+            11: '#168c80',
+            12: '#f44336',
+            13: '#03a9f4',
+            14: '#ffb300',
+            15: '#d500f9'
+        },
         tutorial: true
     });
 
