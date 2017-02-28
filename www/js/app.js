@@ -47,8 +47,6 @@ var app = angular.module('starter', ['ionic', 'hmTouchEvents', 'ngStorage'])
                 controller: 'howCtrl'
             });
 
-
-
         $urlRouterProvider.otherwise('/how');
     });
 
@@ -122,15 +120,15 @@ app.controller('homeCtrl', ['$rootScope', '$scope', '$localStorage', '$state', f
         if ($rootScope.isLocked[lvl]) {
             if (fifthaudio.paused) {
                 fifthaudio.play();
-                fifthaudio.volume = 0.1;
+                fifthaudio.volume = 0.5;
             }
-            
+
             else{
                 fifthaudio.currentTime = 0
             }
 
             $state.go('puzzle', {
-                'lvl': parseInt(lvl) 
+                'lvl': parseInt(lvl)
             });
         }
 
@@ -155,7 +153,7 @@ app.controller('footerCtrl', ['$rootScope', function ($rootScope) {
     $rootScope.back = function () {
         if (sixthaudio.paused) {
             sixthaudio.play();
-            sixthaudio.volume = 0.1;
+            sixthaudio.volume = 0.5;
         }
 
         else{

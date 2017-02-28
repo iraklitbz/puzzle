@@ -23,13 +23,19 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window, $localSt
             else {
                 thirdaudio.currentTime = 0
             }
-            
+
             $scope.rotation = $scope.rotation === -180 ? 0 : -180;
 
             $('.' + string).css('transform', 'rotateY(' + $scope.rotation + 'deg)');
             $('.front, .back').toggleClass('inback');
         }
     };
+
+ $scope.moveee = function () {
+       $('.draggable').on('dragstart', getInitialPosition).on('dragend', restrictContainer);
+            }
+
+
 
     interact('.draggable')
     	.draggable({
@@ -64,7 +70,7 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window, $localSt
 
     function restrictContainer (event) {
     	var target = event.target,
-    		$target = $(event.target), 
+    		$target = $(event.target),
     		elePos = $target.position(),
     		x = elePos.left,
     		y = elePos.top,
@@ -82,13 +88,13 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window, $localSt
 
             if (secaudio.paused) {
                 secaudio.play();
-                secaudio.volume = 0.1;
+                secaudio.volume = 0.5;
             }
 
             else {
                 secaudio.currentTime = 0
             }
-    		
+
             return false;
     	}
 
@@ -100,7 +106,7 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window, $localSt
         else {
             audio.currentTime = 0
         }
-        
+
     	testIfWin();
     }
 
@@ -128,7 +134,7 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window, $localSt
 
     	$squares.each(function (k, v) {
     		var $v = $(v).get(0).getBoundingClientRect();
-    		
+
     		_squares.push(JSON.stringify({
     			'top': $v.top,
     			'left': $v.left,
@@ -163,6 +169,7 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window, $localSt
     }
 
     function youWin() {
+        $('.square').css({backgroundColor: ':#168c80!important'}, 800);
         if (forthaudio.paused) {
             forthaudio.play();
             forthaudio.volume = 0.3;
@@ -172,15 +179,21 @@ function puzzleCtrl ($rootScope, $scope, $state, $stateParams, $window, $localSt
             forthaudio.currentTime = 0
 
         }
-        
+
         var lvlToUnlock = parseInt($stateParams.lvl) + 1;
 
         $rootScope.isLocked[lvlToUnlock] = true;
         $rootScope.$apply();
 
-    	$state.go('puzzle', {
-            'lvl': lvlToUnlock
+
+      setTimeout(function(){
+        $state.go('puzzle', {
+          'lvl': lvlToUnlock
         });
+
+      }, 850);
+
+
     }
 
     /**

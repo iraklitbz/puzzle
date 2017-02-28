@@ -1,21 +1,21 @@
 
 
-<div class="first generalpuzzle" ng-controller="puzzleCtrl">
+<div id="first" class="first generalpuzzle" ng-controller="puzzleCtrl">
     <div class='box-scene' hm-swipe="rotateBox('box', $event)">
         <div class='box'>
             <div class='front face'>
-                <div id="brick-1" class="draggable">
+                <div id="brick-1" class="brick-1 draggable" hm-swipe="moveee()">
                     <div class="square"></div>
                     <div class="square"></div>
                     <div class="square"></div>
-                    <div class="square"></div>
-                </div>
-                
-                <div id="brick-2" class="draggable">
                     <div class="square"></div>
                 </div>
 
-                <div id="brick-3" class="draggable">
+                <div id="brick-2" class=" brick-2 draggable">
+                    <div class="square"></div>
+                </div>
+
+                <div id="brick-3" class="brick-3 draggable">
                     <div class="square"></div>
                     <div class="square"></div>
                     <div class="square"></div>
@@ -42,17 +42,17 @@
             </div>
 
             <div class="back inback face">
-                <div id="brick-4" class="draggable">
+                <div id="brick-4" class="brick-4 draggable">
                     <div class="square"></div>
                     <div class="square"></div>
                     <div class="square"></div>
                 </div>
 
-                <div id="brick-6" class="draggable">
+                <div id="brick-6" class="brick-6 draggable">
                     <div class="square"></div>
                 </div>
 
-                <div id="brick-5" class="draggable">
+                <div id="brick-5" class="brick-5 draggable">
                     <div class="square"></div>
                     <div class="square"></div>
                     <div class="square"></div>
